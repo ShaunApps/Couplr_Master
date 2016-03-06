@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
 
+  root 'welcome#index'
   resources :images
   resource :users
+  get 'signup' => 'users#new', as: 'signup'
   resource :sessions
-
- root 'welcome#index'
-
- get 'signup' => 'users#new', as: 'signup'
- get 'login' => 'sessions#new', as: 'login'
- get 'logout' => 'sessions#destroy', as: 'logout'
-
+  get 'login' => 'sessions#new', as: 'login'
+  get 'logout' => 'sessions#destroy', as: 'logout'
 
 
   # mailbox folder routes
@@ -29,9 +26,6 @@ Rails.application.routes.draw do
 
 
 
-  get 'sessions/new'
-
-  get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
