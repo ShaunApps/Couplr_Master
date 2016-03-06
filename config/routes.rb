@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
 
-
   get 'sessions/new'
 
   get 'users/new'
