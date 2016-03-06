@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       # logged in, hooray
       session[:user_id] = @user.id
-      puts @user.inspect
       redirect_to user_path(@user), notice: "Logged In"
     else
       flash.now.alert = "Username and/or Password is Invalid"
