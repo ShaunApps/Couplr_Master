@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  end 
+  end
 
 
   def create
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to root_path, notice: "Created user"
+
     else
       render action: 'new'
     end

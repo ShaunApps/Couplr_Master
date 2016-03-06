@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action
 
   def new
   end
@@ -18,6 +19,15 @@ class SessionsController < ApplicationController
     else
       render action: 'new'
     end
+  end
+
+
+
+  def destroy
+  #  forget(current_user)
+   session.delete(:user_id)
+   @current_user = nil
+   redirect_to root_url
   end
 
 end

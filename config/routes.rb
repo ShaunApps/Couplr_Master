@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resource :users
   resource :sessions
 
-  root 'welcome#index'
+ root 'welcome#index'
+
+ get 'signup' => 'users#new'
+ get 'login' => 'sessions#new'
+ delete 'logout' => 'sessions#destroy'
 
 
 
