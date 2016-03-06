@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :images
 
-  resource :users
+  resources :users
   get 'signup' => 'users#new', as: 'signup'
 
   resource :sessions
