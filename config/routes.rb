@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+
   resources :images
+
   resource :users
   get 'signup' => 'users#new', as: 'signup'
+
   resource :sessions
   get 'login' => 'sessions#new', as: 'login'
   get 'logout' => 'sessions#destroy', as: 'logout'
-
 
   # mailbox folder routes
  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
