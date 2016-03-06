@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   resources :images
-  root to: 'sessions#new'
-
   resource :users
   resource :sessions
+
+  root 'welcome#index'
+
+
+
+  get 'sessions/new'
+
   get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
