@@ -6,13 +6,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :authenticate_user, :user_signed_in?, :mailbox, :conversation
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
-  end
 
   def authenticate_user
     return true if current_user
-    redirect_to new_sessions_path
+    redirect_to login_path
 
     return false
     flash[:danger] = "Please log in."
@@ -24,6 +21,12 @@ class ApplicationController < ActionController::Base
 
 
   private
+
+
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
+
 
   def mailbox
     @mailbox ||= current_user.mailbox

@@ -1,19 +1,15 @@
 <h1>Log in</h1>
 <%= form_tag sessions_path do %>
-<p>
+  <div class="field">
   <%= label_tag :username %>
   <%= text_field_tag :username %>
-</p>
-<p>
+  </div>
+<div class="field">
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-</p>
+</div>
 
-<p>
+<div class="actions">
   <%= submit_tag 'Log in' %>
-</p>
-
-<p>
-  <%= link_to "Sign Up", new_users_path %>
-</p>
+</div>
 <% end %>

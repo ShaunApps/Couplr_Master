@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
  root 'welcome#index'
 
- get 'signup' => 'users#new'
- get 'login' => 'sessions#new'
- delete 'logout' => 'sessions#destroy'
+ get 'signup' => 'users#new', as: 'signup'
+ get 'login' => 'sessions#new', as: 'login'
+ get 'logout' => 'sessions#destroy', as: 'logout'
 
 
 
