@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -11,9 +12,11 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      redirect_to root_path, notice: "Created user"
+      log_in @user
+      redirect_to root_path, notice: "Welcome to Couplr!"
 
     else
+      flash[:danger] = 'Passwords don\'t match'
       render action: 'new'
     end
   end
