@@ -10,3 +10,19 @@ ready = function(){
 $(document).ready(ready);
 // if using turbolinks
 $(document).on("page:load",ready);
+
+
+
+
+//alex work here
+
+// $( document ).ready(function() {
+//     console.log( "ready!" );
+//
+//     $('#new_task').on('ajax:success', newTask);
+//
+//       function newTask() {
+//         window.location.reload();
+//       }
+//
+// });

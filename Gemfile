@@ -35,6 +35,11 @@ gem 'rails_12factor', group: :production
 
 gem 'mailboxer'
 
+gem 'jquery-turbolinks'
+
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
