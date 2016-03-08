@@ -13,6 +13,16 @@ class UsersController < ApplicationController
   def show
   end
 
+  def send_message_to_user
+    p params
+    #  recipients = User.where(id: conversation_params[:recipients])
+     recipients = User.where(id: (params["conversation"]["user_id"]).to_i)
+     conversation = current_user.send_message(recipients, params["conversation"][:body], params["conversation"][:subject]).conversation
+     flash[:success] = "Your message was successfully sent!"
+    #  redirect_to conversation_path(conversation)
+     redirect_to :back
+  end
+
   def update
     respond_to do |format|
       if @user.update(user_params)

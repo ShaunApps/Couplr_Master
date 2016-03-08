@@ -6,16 +6,16 @@ class ConversationsController < ApplicationController
  end
 
  def create
-   recipients = User.where(id: conversation_params[:recipients])
-   conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
-   flash[:success] = "Your message was successfully sent!"
-   redirect_to conversation_path(conversation)
+  recipients = User.where(id: conversation_params[:recipients])
+  conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+  flash[:success] = "Your message was successfully sent!"
+  redirect_to conversation_path(conversation)
  end
 
- def create_message
-   recipients = User.where(id: conversation_params[:recipients])
-   conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
- end
+  def create_message
+    recipients = User.where(id: conversation_params[:recipients])
+    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+  end
 
  def show
    @receipts = conversation.receipts_for(current_user)
@@ -46,6 +46,6 @@ class ConversationsController < ApplicationController
  end
 
  def conversation_params
-   params.require(:conversation).permit(:subject, :body,recipients:[])
+   params.require(:conversation).permit(:subject, :body, :user_id, recipients:[])
  end
 end

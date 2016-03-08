@@ -5,13 +5,19 @@ Rails.application.routes.draw do
   resources :images
 
   resources :users
+
+
   get 'signup' => 'users#new', as: 'signup'
 
   resource :sessions
   get 'login' => 'sessions#new', as: 'login'
   get 'logout' => 'sessions#destroy', as: 'logout'
 
-  resources :messages, only: [:new, :create]
+  # resources :messages, only: [:new, :create]
+
+  post 'message' => 'users#send_message_to_user'
+  # get 'messages' => 'messages#new', as: 'new_message'
+
 
   # mailbox folder routes
  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
