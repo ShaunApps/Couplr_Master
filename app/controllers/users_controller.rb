@@ -60,7 +60,31 @@ class UsersController < ApplicationController
   def user_params
     params.
       require(:user).
-      permit(:username, :password, :password_confirmation, :avatar, :email, :partner_one_name, :partner_two_name)
+      permit(
+             :username,
+             :password,
+             :password_confirmation,
+             :avatar,
+             :email,
+             :partner_one_name,
+             :partner_two_name,
+             :ponebmonth,
+             :ponebday,
+             :ponebyear,
+             :ptwobmonth,
+             :ptwobday,
+             :ptwobyear,
+             :relationship_status,
+             :we_are_a,
+             :we_are_looking_for,
+             :street_number,
+             :street,
+             :city,
+             :state,
+             :country_location,
+             :zip_code,
+             :have_kids,
+              )
   end
 
 

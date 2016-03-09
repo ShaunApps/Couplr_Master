@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309004147) do
+ActiveRecord::Schema.define(version: 20160309012639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 20160309004147) do
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "email"
     t.boolean  "action"
     t.boolean  "adventure"
@@ -200,6 +200,17 @@ ActiveRecord::Schema.define(version: 20160309004147) do
     t.string   "avatar"
     t.string   "partner_one_name"
     t.string   "partner_two_name"
+    t.integer  "ponebmonth"
+    t.integer  "ptwobmonth"
+    t.integer  "ponebday"
+    t.integer  "ptwobday"
+    t.integer  "ponebyear"
+    t.integer  "ptwobyear"
+    t.string   "relationship_status"
+    t.string   "we_are_a"
+    t.string   "we_are_looking_for"
+    t.string   "street_number"
+    t.boolean  "have_kids"
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
