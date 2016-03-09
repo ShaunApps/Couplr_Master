@@ -1,13 +1,73 @@
-<h1>user show page</h1>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="">couplr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                <% if user_signed_in? %>
+
+                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+                    <li><%= link_to "Logout", logout_path %></li>
+                <% else %>
+                    <li class="active"><%= link_to "Login", login_path %></li>
+                    <li><%= link_to "Sign up", signup_path %></li>
+                <% end %>
+              </ul>
+            </div></.nav-collapse
+          </div>
+         </nav>
+
+
+         <div class="container">
+             <div class="row clearfix well">
+         		<div class="col-md-2 column">
+         			<img class="img-thumbnail" alt="140x140" src="http://lorempixel.com/140/140/" />
+         		</div>
+         		<div class="col-md-8 column">
+         			<blockquote>
+         				<p>
+         					Happy Couple
+         				</p> <small>27-43 / Married / Straight <cite>Fort Lauderdale Florida</cite></small>
+         			</blockquote>
+         		</div>
+         		<div class="col-md-2 column">
+
+               <% if current_user != @user %>
+               <input type="button" id="btnShowModal" value="Send a message" class="btn btn-default btn-block">
+               <% end %>
+         				 <!-- <button class="btn btn-default btn-block" type="button">
+                             Message
+                          </button> -->
+
+                          <button class="btn btn-default btn-block" type="button">
+                             Report User
+                          </button>
+
+
+         		</div>
+         	</div>
+
+
 <!-- insert image here -->
-<%=image_tag(@user.avatar,:size => "200x220")%>
-<%= @user.username %> <br>
-<% if current_user != @user %>
+<!-- <%=image_tag(@user.avatar,:size => "200x220")%> -->
+<!-- <%= @user.username %> <br> -->
+<!-- <% if current_user != @user %>
 <input type="button" id="btnShowModal" value="Send a message"/>
-<% end %>
+<% end %> -->
 <%#= render "/conversations/form" %>
 
-
+</div>
 <br>
 
 
@@ -16,39 +76,168 @@
 <div id="overlay" class="web_dialog_overlay"></div>
 
 <div id="dialog" class="web_dialog">
-   <!-- <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
+   <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
       <tr>
-         <td class="web_dialog_title">Online Survey</td>
+
          <td class="web_dialog_title align_right">
             <a href="#" id="btnClose">Close</a>
          </td>
       </tr>
-      <br> -->
+      <br>
 
 
-           <%= form_for :conversation, url: :message, html: { class: "" } do |f| %>
-              <div class="form-group">
-                <%= f.label :recipients, "Recipient: #{@user.username}" %>
-                <%= f.hidden_field :user_id, :value => @user.id %>
-              </div>
-              <div class="form-group">
-                <%= f.label :subject %>
-                <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :message %>
-                <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
-              </div>
-              <div id="btnSubmit">
-                <%= f.submit "Send Message", class: "btn btn-success" %>
-              </div>
+      <%= form_for :conversation, url: :message, html: { class: "" } do |f| %>
+         <div class="form-group">
+           <%= f.label :recipients, "Recipient: #{@user.username}" %>
+           <%= f.hidden_field :user_id, :value => @user.id %>
+         </div>
+         <div class="form-group">
+           <%= f.label :subject %>
+           <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+         </div>
+         <div class="form-group">
+           <%= f.label :message %>
+           <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+         </div>
+         <div id="btnSubmit">
+           <%= f.submit "Send Message", class: "btn btn-success" %>
+         </div>
 
-           <% end %>
+      <% end %>
 
 
          <!-- <td colspan="2" style="text-align: center;">
             <input id="btnSubmit" type="button" value="Submit" />
-         </td>
+         </td> -->
       </tr>
-   </table> -->
+   </table>
+</div>
+
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="tabbable" id="tabs-444468">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#" data-toggle="tab">About</a>
+					</li>
+					<li>
+						<a href="#" data-toggle="tab">Photos</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-200304">
+						 <div class="row clearfix">
+                			<div class="col-md-8 column">
+            					<p><br>
+                                    We met at work and have been happily married for 3 years! We're looking to make friends with similar interests.
+            					</p>
+                                <hr/>
+
+            				</div>
+            				<div class="col-md-4 column">
+            					<table class="table">
+            						<thead>
+            							<tr>
+            								<th>
+            									Details
+            								</th>
+            								<th>
+            									Married
+            								</th>
+            							</tr>
+            						</thead>
+            						<tbody>
+            							<tr>
+            								<td>
+            									Last Online
+            								</td>
+            								<td>
+            									1 hour ago
+            								</td>
+            							</tr>
+                                        <tr>
+                							<td>
+            									Ethinicity
+            								</td>
+            								<td>
+            									White
+            								</td>
+            							</tr>
+                              <tr>
+                    						<td>
+            									Diet
+            								</td>
+            								<td>
+            									Veg
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Smoke
+            								</td>
+            								<td>
+            									No
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Drink
+            								</td>
+            								<td>
+            									Occasionally
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Drugs
+            								</td>
+            								<td>
+            									No
+            								</td>
+            							</tr>
+            							<tr>
+                        					<td>
+            									Religion
+            								</td>
+            								<td>
+            									Athiest
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Education
+            								</td>
+            								<td>
+            									College Graduate
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Job
+            								</td>
+            								<td>
+            									Information Technology
+            								</td>
+            							</tr>
+                                        <tr>
+                        					<td>
+            									Language
+            								</td>
+            								<td>
+            									<ol>
+                                                 <li>English</li>
+                                                 <li>Spanish</li>
+                                                 </ol>
+            								</td>
+            							</tr>
+            						</tbody>
+            					</table>
+            				</div>
+            			</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>

@@ -1,5 +1,19 @@
+<!-- Header -->
+  <div class="container">
+  <div class="intro-header">
+          <div class="row">
 
-<h1>Almost there!</h1>
+<div class="intro-message">
+<div class="login-button">
+<h6>Have an account?</h6>
+<a href="login" class="btn btn-default btn-lg"><span class="network-name">Log In!</span></a>
+</div>
+
+<h1>couplr</h1>
+<br>
+<h4>Almost there!</h4>
+<h6>We just need a little more information</h6>
+
 <%= form_for @user do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
@@ -11,15 +25,17 @@
   </ul>
 </div>
 <% end %>
-<form class="form-inline" role="form">
-  <div class="form-group">
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-</div>
 
-<div class="form-group">
-  <%= f.label :shared_email %>
-  <%= f.text_field :email %>
+  <div class="container-fluid">
+    <div class="row">
+
+
+<form class="form-horizontal">
+  <div class="col-sm-6">
+    <div class="form-group">
+
+  <%= f.label :username %>
+  <%= f.text_field :username%>
 </div>
 
 <div class="form-group">
@@ -28,22 +44,37 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</div>
-
-<div class="form-group">
   <%= f.label :partner_one_name %>
   <%= f.text_field :partner_one_name %>
+</div>
+</div>
+
+  <div class="col-sm-6">
+  <div class="form-group">
+    <%= f.label :shared_email %>
+    <%= f.text_field :email %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 </div>
 
 <div class="form-group">
   <%= f.label :partner_two_name %>
   <%= f.text_field :partner_two_name %>
 </div>
+</div>
+</div>
+</div>
 
 <div>
+  <!-- <a href="users" class="btn btn-default btn-lg"><span class="network-name">Create Account</span></a> -->
   <%= f.submit "Create Account", class: "btn btn-primary" %>
 </div>
+</div>
+</div>
+</div>
+</form>
 </section>
 <% end %>
