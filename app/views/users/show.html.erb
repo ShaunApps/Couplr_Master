@@ -2,7 +2,9 @@
 <!-- insert image here -->
 <%=image_tag(@user.avatar,:size => "200x220")%>
 <%= @user.username %> <br>
+<% if current_user != @user %>
 <input type="button" id="btnShowModal" value="Send a message"/>
+<% end %>
 <%#= render "/conversations/form" %>
 
 
