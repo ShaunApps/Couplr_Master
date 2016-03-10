@@ -43,8 +43,8 @@ class UsersController < ApplicationController
           format.html { redirect_to five_aboutus_path(@user), notice: 'User was successfully updated.' }
           format.json { render :five_aboutus, status: :ok, location: @user }
         else params[:redirect_location] == 'six_login'
-          format.html { redirect_to six_login_path(@user), notice: 'User was successfully updated.' }
-          format.json { render :six_login, status: :ok, location: @user }
+          format.html { redirect_to user_path(@user), notice: 'User was successfully updated.' }
+          format.json { render :user_path, status: :ok, location: @user }
         end
       else
         format.html { render :edit }
