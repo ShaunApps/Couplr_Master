@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -29,13 +29,19 @@ h6 {
     font-weight: 400;
 }
 
+#signup_header .header_login span {
+    line-height: 42px;
+    padding-right: 20px;
+    float: left;
+    margin-right: 25px;
+}
 
 .intro-header {
     padding-top: 0; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: #000;
+    background: #c6e2ff;
     background-size: cover;
 }
 
@@ -95,10 +101,10 @@ intro-message > h1 {
 }
 
 .network-name {
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+    font-weight: 200;
+    letter-spacing: 0px;
 }
 
 .content-section-a {
@@ -239,19 +245,7 @@ p.copyright {
   padding-bottom: 0%;
   justify-content: space-between;
 }
-.simple_form {
-    float: none;
-    text-align : center;
-    border: 1px solid #CCC;
-}
-.simple_form .input-box {
-    margin-bottom: 10px;
-}
-.simple_form input {
-    margin-bottom: 10px;
-    margin: 2px 10px;
-    display: inline-block;
-}
+
 body {
   padding-top: 65px;
 }
@@ -259,9 +253,12 @@ body {
 /****************************/
 /****    FORM             ***/
 /****************************/
-
+.body {
+  font-family: 'Open Sans',sans-serif !important;
+}
 .form-group {
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .right-reg {
@@ -272,16 +269,22 @@ body {
 }
 
 .btn-default.btn-lg {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-family: 'Open Sans',sans-serif !important;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px;
+    color: #fff;
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: 0px;
+    border-radius: 2px;
+    margin-top: 15px;
+    background-color: #00d280;
 }
 
 .create-account-btn input[type="submit"] {
     padding-left: 16px;
     padding-right: 16px;
+    color: #fff !important;
+    background-color: #3260c7;
+    border-color: #3260c7;
 }
