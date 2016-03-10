@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'three_interests/:id' => 'users#three_interests', as: 'three_interests'
   get 'four_moreinterests/:id' => 'users#four_moreinterests', as: 'four_moreinterests'
   get 'five_aboutus/:id' => 'users#five_aboutus', as: 'five_aboutus'
-  get 'six_login/:id' => 'users#six_login', as: 'six_login'
+  #get 'six_login/:id' => 'users#six_login', as: 'six_login'
 
   # mailbox folder routes
  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

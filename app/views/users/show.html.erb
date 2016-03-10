@@ -24,7 +24,7 @@
                     <li><%= link_to "Sign up", signup_path %></li>
                 <% end %>
               </ul>
-            </div></.nav-collapse
+            </div>
           </div>
          </nav>
 
@@ -46,9 +46,6 @@
                <% if current_user != @user %>
                <input type="button" id="btnShowModal" value="Send a message" class="btn btn-default btn-block">
                <% end %>
-         				 <!-- <button class="btn btn-default btn-block" type="button">
-                             Message
-                          </button> -->
 
                           <button class="btn btn-default btn-block" type="button">
                              Report User
@@ -59,14 +56,6 @@
          	</div>
 
 
-<!-- insert image here -->
-<!-- <%=image_tag(@user.avatar,:size => "200x220")%> -->
-<!-- <%= @user.username %> <br> -->
-<!-- <% if current_user != @user %>
-<input type="button" id="btnShowModal" value="Send a message"/>
-<% end %> -->
-<%#= render "/conversations/form" %>
-
 </div>
 <br>
 
@@ -76,14 +65,16 @@
 <div id="overlay" class="web_dialog_overlay"></div>
 
 <div id="dialog" class="web_dialog">
-   <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
+
+  <!-- <h1>Do not uncomment the close button below for now, it is messing up the send a message button</h1> -->
+   <!-- <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
       <tr>
 
          <td class="web_dialog_title align_right">
             <a href="#" id="btnClose">Close</a>
          </td>
       </tr>
-      <br>
+      <br> -->
 
 
       <%= form_for :conversation, url: :message, html: { class: "" } do |f| %>
@@ -109,8 +100,8 @@
          <!-- <td colspan="2" style="text-align: center;">
             <input id="btnSubmit" type="button" value="Submit" />
          </td> -->
-      </tr>
-   </table>
+      <!-- </tr>
+   </table> -->
 </div>
 
 	<div class="row clearfix">
