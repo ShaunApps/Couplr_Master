@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-   # @users = User.all
+  #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
  end
 
@@ -43,8 +43,8 @@ class UsersController < ApplicationController
           format.html { redirect_to five_aboutus_path(@user), notice: 'User was successfully updated.' }
           format.json { render :five_aboutus, status: :ok, location: @user }
         else params[:redirect_location] == 'six_login'
-          format.html { redirect_to user_path(@user), notice: 'User was successfully updated.' }
-          format.json { render :user_path, status: :ok, location: @user }
+          format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+          format.json { render :users, status: :ok, location: @user }
         end
       else
         format.html { render :edit }
