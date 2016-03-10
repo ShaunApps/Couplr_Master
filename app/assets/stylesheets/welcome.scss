@@ -15,7 +15,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    // font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -34,7 +35,7 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: #3260c7;
+    background: #c6e2ff;
     background-size: cover;
 }
 
@@ -92,17 +93,31 @@ h6 {
         width: 100%;
     }
 }
+#signup_header .header_login span {
+    line-height: 42px;
+    padding-right: 20px;
+    float: left;
+    margin-right: 25px;
+}
+
+#signup_header .header_log span {
+    line-height: 42px;
+    padding-right: 20px;
+    float: left;
+    margin-right: 25px;
+    background-color: #00d280;
+}
 
 .network-name {
-    text-transform: uppercase;
+    text-transform: none;
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .content-section-a {
     padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: #00d280;
 }
 
 .content-section-b {
