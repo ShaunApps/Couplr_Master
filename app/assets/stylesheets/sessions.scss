@@ -186,3 +186,36 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+/****************************/
+/****    FORM             ***/
+/****************************/
+
+.form-group {
+    text-align: left;
+}
+
+.right-reg {
+    margin-left: 25px;
+}
+.left-reg.left-reg {
+    padding-left: 33px;
+}
+
+.btn-default.btn-lg {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.login-btn {
+    padding-top: 20px;
+    margin-left: 35px;
+}
+
+.row.log {
+    margin-left: 300px;
+}

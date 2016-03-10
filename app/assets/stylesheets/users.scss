@@ -39,12 +39,12 @@ h6 {
     background-size: cover;
 }
 
-.login-button {
+login-button {
   text-align: right;
   padding-right: 5%;
 }
 
-.intro-message {
+intro-message {
     position: relative;
     text-align: center;
     padding-top: 0;
@@ -53,7 +53,7 @@ h6 {
     align-content: center;
 }
 
-.intro-message > h1 {
+intro-message > h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 5em;
@@ -254,4 +254,34 @@ p.copyright {
 }
 body {
   padding-top: 65px;
+}
+
+/****************************/
+/****    FORM             ***/
+/****************************/
+
+.form-group {
+    text-align: left;
+}
+
+.right-reg {
+    margin-left: 25px;
+}
+.left-reg.left-reg {
+    padding-left: 33px;
+}
+
+.btn-default.btn-lg {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.create-account-btn input[type="submit"] {
+    padding-left: 16px;
+    padding-right: 16px;
 }

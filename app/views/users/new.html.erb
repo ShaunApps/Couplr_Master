@@ -6,11 +6,11 @@
 <div class="intro-message">
 <div class="login-button">
 <h6>Have an account?</h6>
-<a href="login" class="btn btn-default btn-lg"><span class="network-name">Log In!</span></a>
+<a href="login" class="btn btn-default btn-lg"><span class="network-name">Log In</span></a>
 </div>
 
 <h1>couplr</h1>
-<br>
+<hr class="intro-divider">
 <h4>Almost there!</h4>
 <h6>We just need a little more information</h6>
 
@@ -31,11 +31,11 @@
 
 
 <form class="form-horizontal">
-  <div class="col-sm-6">
+  <div class="col-sm-3 col-sm-offset-3 left-reg">
     <div class="form-group">
 
   <%= f.label :username %>
-  <%= f.text_field :username%>
+  <%= f.text_field :username, :placeholder => "placeholder text"%>
 </div>
 
 <div class="form-group">
@@ -44,33 +44,35 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_one_name %>
+  <%= f.label :partner_one_name, "Partner 1" %>
   <%= f.text_field :partner_one_name %>
 </div>
 </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-3 right-reg">
   <div class="form-group">
-    <%= f.label :shared_email %>
+    <%= f.label :shared_email, "Shared Email" %>
     <%= f.text_field :email %>
   </div>
 
 <div class="form-group">
-  <%= f.label :password_confirmation %>
+  <%= f.label :password_confirmation, "Confirm Password" %>
   <%= f.password_field :password_confirmation %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_two_name %>
+  <%= f.label :partner_two_name, "Partner 2" %>
   <%= f.text_field :partner_two_name %>
 </div>
 </div>
 </div>
 </div>
 
-<div>
+<div class="create-account-btn">
   <!-- <a href="users" class="btn btn-default btn-lg"><span class="network-name">Create Account</span></a> -->
-  <%= f.submit "Create Account", class: "btn btn-primary" %>
+
+  <%= f.submit "Create Account", class: "btn btn-default btn-lg" %>
+
 </div>
 </div>
 </div>

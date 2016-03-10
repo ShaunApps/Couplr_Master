@@ -5,3 +5,11 @@
 @import 'sessions';
 @import 'bootstrap';
 @import 'bootstrap/theme';
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+    color: #000 !important;
+}
