@@ -1,5 +1,5 @@
 <h1>Register page</h1>
-<%= form_for @user do |f| %>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -95,6 +95,7 @@
 </div>
 
 <div>
+  <%= hidden_field_tag :redirect_location, 'two_upload_photo' %>
   <%= f.submit "Sign Up", class: "btn btn-primary" %>
 </div>
 

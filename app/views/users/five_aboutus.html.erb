@@ -1,3 +1,35 @@
-about us
+<h2>About us(bio) / ideal friends</h2>
 
-ideal friends
+<h1>More-Interest page</h1>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<% if @user.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<h2>About us</h2>
+<div class="form-group">
+  <%= f.label :about_us %>
+  <%= f.text_field :about_us %>
+</div>
+
+<h2>Ideal friends</h2>
+<div class="form-group">
+  <%= f.label :ideal_friends %>
+  <%= f.text_field :ideal_friends %>
+</div>
+
+
+<div>
+  <%= hidden_field_tag :redirect_location, 'six_login' %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+</div>
+
+<% end %>

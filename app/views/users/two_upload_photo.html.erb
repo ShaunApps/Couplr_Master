@@ -1,6 +1,6 @@
 <h1>Profile pic page</h1>
 <h2>We need to add a skip button, and option to upload more photos </h2>
-<%= form_for @user do |f| %>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -19,6 +19,7 @@
 </div>
 
 <div>
+  <%= hidden_field_tag :redirect_location, 'three_interests' %>
   <%= f.submit "Sign Up", class: "btn btn-primary" %>
 </div>
 
