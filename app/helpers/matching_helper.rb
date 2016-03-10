@@ -1,6 +1,3 @@
-
-
-
 module MatchingHelper
 
 
@@ -9,8 +6,8 @@ def match_users(current_user_set, other_users_set)
 
 
     #if the data set is a hash of key/value pairs, the below code will take the values and put into an array.
-    current_user_hash = User.current_user.params.all #make this a controller maybe?
-    other_user_hash = User.@user.params.all
+    # current_user_hash = User.current_user.params.all #make this a controller maybe?
+    # other_user_hash = User.@user.params.all
 
 
 

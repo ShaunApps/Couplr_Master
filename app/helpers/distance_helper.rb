@@ -1,5 +1,4 @@
-class DistanceController < ApplicationController
-
+module DistanceHelper
 
   def get_nearby
 
@@ -12,8 +11,8 @@ class DistanceController < ApplicationController
 
     if response['rows'][0]['elements']['distance']['value'] < 48280.3 #number of meters equivalent to ~30 miles.
       #display user as "nearby user"
-
-
     end
+
+  end
 
 end
