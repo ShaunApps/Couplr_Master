@@ -56,3 +56,10 @@
 {
    text-align: right;
 }
+.flex-container {
+  height: auto;
+  display: flex;
+  flex-flow: row;
+  padding-bottom: 0%;
+  justify-content: space-between;
+}

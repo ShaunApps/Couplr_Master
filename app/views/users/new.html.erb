@@ -1,4 +1,5 @@
-<h1>Sign up</h1>
+
+<h1>Almost there!</h1>
 <%= form_for @user do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
@@ -10,8 +11,8 @@
   </ul>
 </div>
 <% end %>
-
-<div class="form-group">
+<form class="form-inline" role="form">
+  <div class="form-group">
   <%= f.label :username %>
   <%= f.text_field :username %>
 </div>
@@ -41,8 +42,8 @@
   <%= f.text_field :partner_two_name %>
 </div>
 
-
 <div>
-  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+  <%= f.submit "Create Account", class: "btn btn-primary" %>
 </div>
+</section>
 <% end %>
