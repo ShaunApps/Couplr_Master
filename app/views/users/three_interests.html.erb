@@ -1,1 +1,275 @@
-check interest
+<h1>Interest page</h1>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<% if @user.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- We might want to make these f.select fields, but we'll do that when we have time -->
+<!-- We can add terms and services and captcha if we have time -->
+<h2>Movies</h2>
+<div class="form-group">
+  <%= f.label :action %>
+  <%= f.check_box :action %>
+</div>
+
+<div class="form-group">
+  <%= f.label :adventure %>
+  <%= f.check_box :adventure %>
+</div>
+
+<div class="form-group">
+  <%= f.label :animation %>
+  <%= f.check_box :animation %>
+</div>
+
+<div class="form-group">
+  <%= f.label :comedy %>
+  <%= f.check_box :comedy %>
+</div>
+
+<div class="form-group">
+  <%= f.label :documentary %>
+  <%= f.check_box :documentary %>
+</div>
+
+<div class="form-group">
+  <%= f.label :drama %>
+  <%= f.check_box :drama %>
+</div>
+
+<div class="form-group">
+  <%= f.label :family %>
+  <%= f.check_box :family %>
+</div>
+
+<div class="form-group">
+  <%= f.label :horror %>
+  <%= f.check_box :horror %>
+</div>
+
+<div class="form-group">
+  <%= f.label :musical %>
+  <%= f.check_box :musical %>
+</div>
+
+<div class="form-group">
+  <%= f.label :mystery %>
+  <%= f.check_box :mystery %>
+</div>
+
+<div class="form-group">
+  <%= f.label :romance %>
+  <%= f.check_box :romance %>
+</div>
+
+<div class="form-group">
+  <%= f.label :scifi %>
+  <%= f.check_box :scifi %>
+</div>
+
+<div class="form-group">
+  <%= f.label :western %>
+  <%= f.check_box :western %>
+</div>
+
+<h2>Music</h2>
+<div class="form-group">
+  <%= f.label :blues %>
+  <%= f.check_box :blues %>
+</div>
+
+<div class="form-group">
+  <%= f.label :country %>
+  <%= f.check_box :country %>
+</div>
+
+<div class="form-group">
+  <%= f.label :disco %>
+  <%= f.check_box :disco %>
+</div>
+
+<div class="form-group">
+  <%= f.label :electronic %>
+  <%= f.check_box :electronic %>
+</div>
+
+<div class="form-group">
+  <%= f.label :hiphop %>
+  <%= f.check_box :hiphop %>
+</div>
+
+<div class="form-group">
+  <%= f.label :jazz %>
+  <%= f.check_box :jazz %>
+</div>
+
+<div class="form-group">
+  <%= f.label :latin %>
+  <%= f.check_box :latin %>
+</div>
+
+<div class="form-group">
+  <%= f.label :pop %>
+  <%= f.check_box :pop %>
+</div>
+
+<div class="form-group">
+  <%= f.label :rnb %>
+  <%= f.check_box :rnb %>
+</div>
+
+<div class="form-group">
+  <%= f.label :rap %>
+  <%= f.check_box :rap %>
+</div>
+
+<div class="form-group">
+  <%= f.label :rock %>
+  <%= f.check_box :rock %>
+</div>
+
+<div class="form-group">
+  <%= f.label :topforty %>
+  <%= f.check_box :topforty %>
+</div>
+
+<h2>Dining</h2>
+<div class="form-group">
+  <%= f.label :african %>
+  <%= f.check_box :african %>
+</div>
+
+<div class="form-group">
+  <%= f.label :american %>
+  <%= f.check_box :american %>
+</div>
+
+<div class="form-group">
+  <%= f.label :asian %>
+  <%= f.check_box :asian %>
+</div>
+
+<div class="form-group">
+  <%= f.label :coffee %>
+  <%= f.check_box :coffee %>
+</div>
+
+<div class="form-group">
+  <%= f.label :european %>
+  <%= f.check_box :european %>
+</div>
+
+<div class="form-group">
+  <%= f.label :mexican %>
+  <%= f.check_box :mexican %>
+</div>
+
+<div class="form-group">
+  <%= f.label :southamerican %>
+  <%= f.check_box :southamerican %>
+</div>
+
+<div class="form-group">
+  <%= f.label :willeatanything %>
+  <%= f.check_box :willeatanything %>
+</div>
+
+<div class="form-group">
+  <%= f.label :wine %>
+  <%= f.check_box :wine %>
+</div>
+
+<h2>Entertainment</h2>
+<div class="form-group">
+  <%= f.label :amusementparks %>
+  <%= f.check_box :amusementparks %>
+</div>
+
+<div class="form-group">
+  <%= f.label :artgalleries %>
+  <%= f.check_box :artgalleries %>
+</div>
+
+<div class="form-group">
+  <%= f.label :bars %>
+  <%= f.check_box :bars %>
+</div>
+
+<div class="form-group">
+  <%= f.label :comedyevents %>
+  <%= f.check_box :comedyevents %>
+</div>
+
+<div class="form-group">
+  <%= f.label :concerts %>
+  <%= f.check_box :concerts %>
+</div>
+
+<div class="form-group">
+  <%= f.label :conventions %>
+  <%= f.check_box :conventions %>
+</div>
+
+<div class="form-group">
+  <%= f.label :dancing %>
+  <%= f.check_box :dancing %>
+</div>
+
+<div class="form-group">
+  <%= f.label :exhibits %>
+  <%= f.check_box :exhibits %>
+</div>
+
+<div class="form-group">
+  <%= f.label :festivals %>
+  <%= f.check_box :festivals %>
+</div>
+
+<div class="form-group">
+  <%= f.label :livemusic %>
+  <%= f.check_box :livemusic %>
+</div>
+
+<div class="form-group">
+  <%= f.label :lounges %>
+  <%= f.check_box :lounges %>
+</div>
+
+<div class="form-group">
+  <%= f.label :movies %>
+  <%= f.check_box :movies %>
+</div>
+
+<div class="form-group">
+  <%= f.label :museums %>
+  <%= f.check_box :museums %>
+</div>
+
+<div class="form-group">
+  <%= f.label :nightclubs %>
+  <%= f.check_box :nightclubs %>
+</div>
+
+<div class="form-group">
+  <%= f.label :performingarts %>
+  <%= f.check_box :performingarts %>
+</div>
+
+<div class="form-group">
+  <%= f.label :theatre %>
+  <%= f.check_box :theatre %>
+</div>
+
+<div>
+  <%= hidden_field_tag :redirect_location, 'four_moreinterests' %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+</div>
+
+<% end %>

@@ -1,11 +1,5 @@
-<h1>user show page</h1>
-<!-- insert image here -->
-<%=image_tag(@user.avatar,:size => "200x220")%>
-<%= @user.username %> <br>
-<% if current_user != @user %>
-<input type="button" id="btnShowModal" value="Send a message"/>
-<% end %><h1>Sign up</h1>
-<%= form_for @user do |f| %>
+<h1>Register page</h1>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -17,40 +11,92 @@
 </div>
 <% end %>
 
+<!-- We might want to make these f.select fields, but we'll do that when we have time -->
+<!-- We can add terms and services and captcha if we have time -->
+
 <div class="form-group">
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.label :partner_one_birth_month %>
+  <%= f.number_field :ponebmonth %>
 </div>
 
 <div class="form-group">
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.label :partner_one_birth_day %>
+  <%= f.number_field :ponebday %>
 </div>
 
 <div class="form-group">
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.label :partner_one_birth_year %>
+  <%= f.number_field :ponebyear %>
 </div>
 
 <div class="form-group">
-      <%= f.label :avatar %>
-      <%= f.file_field :avatar, class: "form-control" %>
-      <%= f.hidden_field :avatar_cache, class: "form-control" %>
+  <%= f.label :partner_two_birth_month %>
+  <%= f.number_field :ptwobmonth %>
+</div>
+
+<div class="form-group">
+  <%= f.label :partner_two_birth_day %>
+  <%= f.number_field :ptwobday %>
+</div>
+
+<div class="form-group">
+  <%= f.label :partner_two_birth_year %>
+  <%= f.number_field :ptwobyear %>
+</div>
+
+<div class="form-group">
+  <%= f.label :relationship_status %>
+  <%= f.text_field :relationship_status %>
+</div>
+
+<div class="form-group">
+  <%= f.label :we_are_a %>
+  <%= f.text_field :we_are_a %>
+</div>
+
+<div class="form-group">
+  <%= f.label :we_are_looking_for %>
+  <%= f.text_field :we_are_looking_for %>
+</div>
+
+<div class="form-group">
+  <%= f.label :street_number %>
+  <%= f.text_field :street_number %>
+</div>
+
+<div class="form-group">
+  <%= f.label :street_name %>
+  <%= f.text_field :street %>
+</div>
+
+<div class="form-group">
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+</div>
+
+<div class="form-group">
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+</div>
+
+<div class="form-group">
+  <%= f.label :country %>
+  <%= f.text_field :country_location %>
+</div>
+
+<div class="form-group">
+  <%= f.label :zip_code %>
+  <%= f.text_field :zip_code %>
+</div>
+
+<div class="form-group">
+  <%= f.label :have_kids %>
+  <%= f.check_box :have_kids %>
 </div>
 
 <div>
+  <%= hidden_field_tag :redirect_location, 'two_upload_photo' %>
   <%= f.submit "Sign Up", class: "btn btn-primary" %>
 </div>
+
 <% end %>
-
-
-
-partner 1 bday
-partner 2 bday
-relationship status
-we are a (man and woman)
-we are looking for (man and woman couples)
-location/address
-have kids
-//terms and service
-//captcha

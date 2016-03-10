@@ -1,1 +1,315 @@
-more interest
+<h1>More-Interest page</h1>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<% if @user.errors.any? %>
+<div class="error_messages">
+  <h2>Form is invalid</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<!-- We might want to make these f.select fields, but we'll do that when we have time -->
+<!-- We can add terms and services and captcha if we have time -->
+<h2>Pets</h2>
+<div class="form-group">
+  <%= f.label :dogs %>
+  <%= f.check_box :dogs %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cats %>
+  <%= f.check_box :cats %>
+</div>
+
+<div class="form-group">
+  <%= f.label :birds %>
+  <%= f.check_box :birds %>
+</div>
+
+<div class="form-group">
+  <%= f.label :reptiles %>
+  <%= f.check_box :reptiles %>
+</div>
+
+<div class="form-group">
+  <%= f.label :fish %>
+  <%= f.check_box :fish %>
+</div>
+
+<h2>Sports</h2>
+<div class="form-group">
+  <%= f.label :badminton %>
+  <%= f.check_box :badmitten %>
+</div>
+
+<div class="form-group">
+  <%= f.label :baseball %>
+  <%= f.check_box :baseball %>
+</div>
+
+<div class="form-group">
+  <%= f.label :basketball %>
+  <%= f.check_box :basketball %>
+</div>
+
+<div class="form-group">
+  <%= f.label :camping %>
+  <%= f.check_box :camping %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cycling %>
+  <%= f.check_box :cycling %>
+</div>
+
+<div class="form-group">
+  <%= f.label :fishing %>
+  <%= f.check_box :fishing %>
+</div>
+
+<div class="form-group">
+  <%= f.label :fitness %>
+  <%= f.check_box :fitness %>
+</div>
+
+<div class="form-group">
+  <%= f.label :football %>
+  <%= f.check_box :football %>
+</div>
+
+<div class="form-group">
+  <%= f.label :gardening %>
+  <%= f.check_box :gardening %>
+</div>
+
+<div class="form-group">
+  <%= f.label :golf %>
+  <%= f.check_box :golf %>
+</div>
+
+<div class="form-group">
+  <%= f.label :gym %>
+  <%= f.check_box :gym %>
+</div>
+
+<div class="form-group">
+  <%= f.label :hiking %>
+  <%= f.check_box :hiking %>
+</div>
+
+<div class="form-group">
+  <%= f.label :hockey %>
+  <%= f.check_box :hockey %>
+</div>
+
+<div class="form-group">
+  <%= f.label :hunting %>
+  <%= f.check_box :hunting %>
+</div>
+
+<div class="form-group">
+  <%= f.label :kayaking %>
+  <%= f.check_box :kayaking %>
+</div>
+
+<div class="form-group">
+  <%= f.label :paddleboarding %>
+  <%= f.check_box :paddleboarding %>
+</div>
+
+<div class="form-group">
+  <%= f.label :picnics %>
+  <%= f.check_box :picnics %>
+</div>
+
+<div class="form-group">
+  <%= f.label :running %>
+  <%= f.check_box :running %>
+</div>
+
+<div class="form-group">
+  <%= f.label :ski %>
+  <%= f.check_box :ski %>
+</div>
+
+<div class="form-group">
+  <%= f.label :snowboard %>
+  <%= f.check_box :snowboard %>
+</div>
+
+<div class="form-group">
+  <%= f.label :soccer %>
+  <%= f.check_box :soccer %>
+</div>
+
+<div class="form-group">
+  <%= f.label :swimming %>
+  <%= f.check_box :swimming %>
+</div>
+
+<div class="form-group">
+  <%= f.label :tennis %>
+  <%= f.check_box :tennis %>
+</div>
+
+<div class="form-group">
+  <%= f.label :walking %>
+  <%= f.check_box :walking %>
+</div>
+
+<h2>Community Services</h2>
+<div class="form-group">
+  <%= f.label :communityservices %>
+  <%= f.check_box :communityservices %>
+</div>
+
+<div class="form-group">
+  <%= f.label :earlybirds %>
+  <%= f.check_box :earlybirds %>
+</div>
+
+<div class="form-group">
+  <%= f.label :environments %>
+  <%= f.check_box :environments %>
+</div>
+
+<div class="form-group">
+  <%= f.label :geeksandnerds %>
+  <%= f.check_box :geeksandnerds %>
+</div>
+
+<div class="form-group">
+  <%= f.label :localpolitics %>
+  <%= f.check_box :localpolitics %>
+</div>
+
+<div class="form-group">
+  <%= f.label :nightowls %>
+  <%= f.check_box :nightowls %>
+</div>
+
+<div class="form-group">
+  <%= f.label :paleo %>
+  <%= f.check_box :paleo %>
+</div>
+
+<div class="form-group">
+  <%= f.label :vegan %>
+  <%= f.check_box :vegan %>
+</div>
+
+<div class="form-group">
+  <%= f.label :vegetarian %>
+  <%= f.check_box :vegetarian %>
+</div>
+
+<div class="form-group">
+  <%= f.label :philanthropy %>
+  <%= f.check_box :philanthropy %>
+</div>
+
+<div class="form-group">
+  <%= f.label :volunteer %>
+  <%= f.check_box :volunteer %>
+</div>
+
+<h2>Other</h2>
+<div class="form-group">
+  <%= f.label :artist %>
+  <%= f.check_box :artist %>
+</div>
+
+<div class="form-group">
+  <%= f.label :artsandcrafts %>
+  <%= f.check_box :artsandcrafts %>
+</div>
+
+<div class="form-group">
+  <%= f.label :billiards %>
+  <%= f.check_box :billiards %>
+</div>
+
+<div class="form-group">
+  <%= f.label :boardgames %>
+  <%= f.check_box :boardgames %>
+</div>
+
+<div class="form-group">
+  <%= f.label :boats %>
+  <%= f.check_box :boats %>
+</div>
+
+<div class="form-group">
+  <%= f.label :books %>
+  <%= f.check_box :books %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cars %>
+  <%= f.check_box :cars %>
+</div>
+
+<div class="form-group">
+  <%= f.label :cooking %>
+  <%= f.check_box :cooking %>
+</div>
+
+<div class="form-group">
+  <%= f.label :fashion %>
+  <%= f.check_box :fashion %>
+</div>
+
+<div class="form-group">
+  <%= f.label :kidsplaydates %>
+  <%= f.check_box :kidsplaydates %>
+</div>
+
+<div class="form-group">
+  <%= f.label :learningandclasses %>
+  <%= f.check_box :learningandclasses %>
+</div>
+
+<div class="form-group">
+  <%= f.label :musician %>
+  <%= f.check_box :musician %>
+</div>
+
+<div class="form-group">
+  <%= f.label :parenting %>
+  <%= f.check_box :parenting %>
+</div>
+
+<div class="form-group">
+  <%= f.label :photography %>
+  <%= f.check_box :photography %>
+</div>
+
+<div class="form-group">
+  <%= f.label :politics %>
+  <%= f.check_box :politics %>
+</div>
+
+<div class="form-group">
+  <%= f.label :traveling %>
+  <%= f.check_box :traveling %>
+</div>
+
+<div class="form-group">
+  <%= f.label :videogames %>
+  <%= f.check_box :videogames %>
+</div>
+
+<div class="form-group">
+  <%= f.label :smoking %>
+  <%= f.check_box :smoking %>
+</div>
+
+<div>
+  <%= hidden_field_tag :redirect_location, 'five_aboutus' %>
+  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+</div>
+
+<% end %>
