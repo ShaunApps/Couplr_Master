@@ -98,6 +98,9 @@ class UsersController < ApplicationController
   end
 
 
+  def get_match_array
+    @suggestions = User.get_match_array()
+  end
 
 
   private

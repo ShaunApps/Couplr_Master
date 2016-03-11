@@ -15,41 +15,58 @@ class User < ActiveRecord::Base
 
 
 
-#return a 2-dem array, sort it, and return top 5
+# return a 2-dem array, sort it, and return top 5
 
   def self.get_match_array()
+    array_of_arrays = []
     self.all.each do |user|
-      self.get_match_score(current_user, user)
-
+      score = self.get_match_score(current_user, user)
+      user_score = [user, score]
+      array_of_arrays << user_score
+    end
+    return array_of_arrays.sort{|a, b| b[1] <=> a[1]}
   end
 
 
 
 
   def self.get_match_score(current_user, user)
-    #
-    user_set = []
-    the_hash.each do |key, value|
+
+    current_user_array = []
+    user_array = []
+
+    current_user.each do |key, value|
       if value == nil
-        user_set << ""
+        current_user_array << ""
       else
-       user_set << value.downcase
+       current_user_array << value.downcase
+     end
     end
-  end
+
+    user.each do |key, value|
+      if value == nil
+        user_array << ""
+      else
+       user_array << value.downcase
+     end
+    end
+
 
 
     count = 0
-    alex_array.zip(other_array).each do |user1, user2|
+    current_user_array.zip(user_array).each do |user1, user2|
       if user1 && user2 == true
         count = count + 1
       end
-    end
     return count
 
 
-   end
 
 
   end
+
+
+
+
 
 end

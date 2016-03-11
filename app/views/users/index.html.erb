@@ -32,6 +32,17 @@
 <%= link_to user.username, user_path(user) %>
 <% end %>
 <!-- Page Content -->
+
+
+<!--Testing this for displaying suggestions-->
+<div class="container">
+  <% @suggestions[0..20].each do |user| %>
+  <%= link_to user.username, user_path(user) %>
+  <% end %>
+</div>
+<!--Testing this for displaying suggestions-->
+
+
 <div class="container">
 
     <!-- Page Header -->

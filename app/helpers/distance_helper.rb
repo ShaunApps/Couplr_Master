@@ -1,6 +1,5 @@
-class DistanceController < ApplicationController
 
-
+module DistanceHelper
   def get_nearby
 
 
@@ -16,4 +15,6 @@ class DistanceController < ApplicationController
 
     end
 
-end
+  end
+
+end 
