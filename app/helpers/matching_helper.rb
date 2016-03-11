@@ -3,14 +3,27 @@
 
 module MatchingHelper
 
+#array we can use over this
+array = [[user.object, score], [user.object, score], ...]
+
+
+this_array = []
+User.all
+#in view
+@users.each do |user|
+  score = match_users(current_user, user)
+  user_score = [user, score]
+  this_array << user_score
+ end 
+
+
 
 def match_users(current_user_set, other_users_set)
     # the_hash = {:one => true, :two => false, :three => true, :four => false, :five => true, :six => true, :seven => false }
 
 
     #if the data set is a hash of key/value pairs, the below code will take the values and put into an array.
-    current_user_hash = User.current_user.params.all #make this a controller maybe?
-    other_user_hash = User.@user.params.all
+
 
 
 
@@ -39,7 +52,7 @@ def match_users(current_user_set, other_users_set)
         count = count + 1
       end
     end
-    p count
+    return count
 
 
   end
