@@ -1,26 +1,80 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="">couplr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                <% if user_signed_in? %>
+
+                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+                    <li><%= link_to "Logout", logout_path %></li>
+                <% else %>
+                    <li class="active"><%= link_to "Login", login_path %></li>
+                    <li><%= link_to "Sign up", signup_path %></li>
+                <% end %>
+              </ul>
+            </div></.nav-collapse
+          </div>
+         </nav>
+         <!-- <div class="intro-header"> -->
+
+         <div class="container">
+
+                      <!-- Row start -->
+                      <div class="row">
+                        <div class="col-md-12 col-sm-6 col-xs-12">
+                          <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                              <i class="icon-calendar"></i>
+                              <h3 class="panel-title">Inputs</h3>
+                            </div>
+
+
+
+                                    <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+                                    <% if @user.errors.any? %>
+                                    <div class="error_messages">
+                                      <h2>Form is invalid</h2>
+                                      <ul>
+                                        <% @user.errors.full_messages.each do |message| %>
+                                        <li><%= message %></li>
+                                        <% end %>
+                                      </ul>
+                                    </div>
+                                    <% end %>
+
+                                    <div class="form-group">
+                                      <div class="row">
+                                        <div class="col-md-3 col-sm-3">
+                                          <%= f.label :avatar %>
+                                          <%= f.file_field :avatar, class: "form-control" %>
+                                          <%= f.hidden_field :avatar_cache, class: "form-control" %>
+                                    </div>
+                                </div>
+                            </div>
+                            <%= hidden_field_tag :redirect_location, 'three_interests' %>
+                            <%= f.submit "Sign Up", class: "btn btn-primary" %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                      </form>
+                  </div>
+                      <!-- Row end -->
+
+
+                      <% end %>
 <h1>Profile pic page</h1>
 <h2>We need to add a skip button, and option to upload more photos </h2>
-<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
-<% if @user.errors.any? %>
-<div class="error_messages">
-  <h2>Form is invalid</h2>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="form-group">
-      <%= f.label :avatar %>
-      <%= f.file_field :avatar, class: "form-control" %>
-      <%= f.hidden_field :avatar_cache, class: "form-control" %>
-</div>
-
-<div>
-  <%= hidden_field_tag :redirect_location, 'three_interests' %>
-  <%= f.submit "Sign Up", class: "btn btn-primary" %>
-</div>
-
-<% end %>

@@ -33,15 +33,6 @@ h6 {
 }
 
 
-.intro-header {
-    padding-top: 0px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
-    background: #104da1;
-    background-size: cover;
-}
-
 .btn-default {
   color: #fff !important;
 }
@@ -206,21 +197,21 @@ p.copyright {
 }
 
 .btn-default.btn-lg {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     text-transform: none;
     font-weight: 200;
     letter-spacing: 0px;
-    background-color: #3260c7 !important;
-    border-color: #3260c7;
-    color: #fff;
+    background-color: #fff !important;
+    border-color: #fff;
+    color: #000;
 }
 
 .login-btn {
     padding-top: 5px;
     margin-left: 35px;
-    background-color: #3260c7;
+    background-color: #fff;
 }
 
 .row.log {

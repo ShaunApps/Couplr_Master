@@ -1,5 +1,18 @@
-<h1>Interest page</h1>
-<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<div class="container">
+
+<h4>Start making friends by adding to your couplr profile.</h4>
+
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Inputs</h3>
+      </div>
+      <div class="panel-body">
+
+<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
+
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -15,261 +28,265 @@
 <!-- We can add terms and services and captcha if we have time -->
 <h2>Movies</h2>
 <div class="form-group">
-  <%= f.label :action %>
+  <%= f.label :action, class: "col-md-2 control-label" %>
   <%= f.check_box :action %>
 </div>
 
 <div class="form-group">
-  <%= f.label :adventure %>
+  <%= f.label :adventure, class: "col-md-2 control-label" %>
   <%= f.check_box :adventure %>
 </div>
 
 <div class="form-group">
-  <%= f.label :animation %>
+  <%= f.label :animation, class: "col-md-2 control-label", class: "col-md-2 control-label" %>
   <%= f.check_box :animation %>
 </div>
 
 <div class="form-group">
-  <%= f.label :comedy %>
+  <%= f.label :comedy, class: "col-md-2 control-label" %>
   <%= f.check_box :comedy %>
 </div>
 
 <div class="form-group">
-  <%= f.label :documentary %>
+  <%= f.label :documentary, class: "col-md-2 control-label" %>
   <%= f.check_box :documentary %>
 </div>
 
 <div class="form-group">
-  <%= f.label :drama %>
+  <%= f.label :drama, class: "col-md-2 control-label" %>
   <%= f.check_box :drama %>
 </div>
 
 <div class="form-group">
-  <%= f.label :family %>
+  <%= f.label :family, class: "col-md-2 control-label" %>
   <%= f.check_box :family %>
 </div>
 
 <div class="form-group">
-  <%= f.label :horror %>
+  <%= f.label :horror, class: "col-md-2 control-label" %>
   <%= f.check_box :horror %>
 </div>
 
 <div class="form-group">
-  <%= f.label :musical %>
+  <%= f.label :musical, class: "col-md-2 control-label" %>
   <%= f.check_box :musical %>
 </div>
 
 <div class="form-group">
-  <%= f.label :mystery %>
+  <%= f.label :mystery, class: "col-md-2 control-label" %>
   <%= f.check_box :mystery %>
 </div>
 
 <div class="form-group">
-  <%= f.label :romance %>
+  <%= f.label :romance, class: "col-md-2 control-label" %>
   <%= f.check_box :romance %>
 </div>
 
 <div class="form-group">
-  <%= f.label :scifi %>
+  <%= f.label :scifi, class: "col-md-2 control-label" %>
   <%= f.check_box :scifi %>
 </div>
 
 <div class="form-group">
-  <%= f.label :western %>
+  <%= f.label :western, class: "col-md-2 control-label" %>
   <%= f.check_box :western %>
 </div>
 
 <h2>Music</h2>
 <div class="form-group">
-  <%= f.label :blues %>
+  <%= f.label :blues, class: "col-md-2 control-label" %>
   <%= f.check_box :blues %>
 </div>
 
 <div class="form-group">
-  <%= f.label :country %>
+  <%= f.label :country, class: "col-md-2 control-label" %>
   <%= f.check_box :country %>
 </div>
 
 <div class="form-group">
-  <%= f.label :disco %>
+  <%= f.label :disco, class: "col-md-2 control-label" %>
   <%= f.check_box :disco %>
 </div>
 
 <div class="form-group">
-  <%= f.label :electronic %>
+  <%= f.label :electronic, class: "col-md-2 control-label" %>
   <%= f.check_box :electronic %>
 </div>
 
 <div class="form-group">
-  <%= f.label :hiphop %>
+  <%= f.label :hiphop, class: "col-md-2 control-label" %>
   <%= f.check_box :hiphop %>
 </div>
 
 <div class="form-group">
-  <%= f.label :jazz %>
+  <%= f.label :jazz, class: "col-md-2 control-label" %>
   <%= f.check_box :jazz %>
 </div>
 
 <div class="form-group">
-  <%= f.label :latin %>
+  <%= f.label :latin, class: "col-md-2 control-label" %>
   <%= f.check_box :latin %>
 </div>
 
 <div class="form-group">
-  <%= f.label :pop %>
+  <%= f.label :pop, class: "col-md-2 control-label" %>
   <%= f.check_box :pop %>
 </div>
 
 <div class="form-group">
-  <%= f.label :rnb %>
+  <%= f.label :rnb, class: "col-md-2 control-label" %>
   <%= f.check_box :rnb %>
 </div>
 
 <div class="form-group">
-  <%= f.label :rap %>
+  <%= f.label :rap, class: "col-md-2 control-label" %>
   <%= f.check_box :rap %>
 </div>
 
 <div class="form-group">
-  <%= f.label :rock %>
+  <%= f.label :rock, class: "col-md-2 control-label" %>
   <%= f.check_box :rock %>
 </div>
 
 <div class="form-group">
-  <%= f.label :topforty %>
+  <%= f.label :topforty, class: "col-md-2 control-label" %>
   <%= f.check_box :topforty %>
 </div>
 
 <h2>Dining</h2>
 <div class="form-group">
-  <%= f.label :african %>
+  <%= f.label :african, class: "col-md-2 control-label" %>
   <%= f.check_box :african %>
 </div>
 
 <div class="form-group">
-  <%= f.label :american %>
+  <%= f.label :american, class: "col-md-2 control-label" %>
   <%= f.check_box :american %>
 </div>
 
 <div class="form-group">
-  <%= f.label :asian %>
+  <%= f.label :asian, class: "col-md-2 control-label" %>
   <%= f.check_box :asian %>
 </div>
 
 <div class="form-group">
-  <%= f.label :coffee %>
+  <%= f.label :coffee, class: "col-md-2 control-label" %>
   <%= f.check_box :coffee %>
 </div>
 
 <div class="form-group">
-  <%= f.label :european %>
+  <%= f.label :european, class: "col-md-2 control-label" %>
   <%= f.check_box :european %>
 </div>
 
 <div class="form-group">
-  <%= f.label :mexican %>
+  <%= f.label :mexican, class: "col-md-2 control-label" %>
   <%= f.check_box :mexican %>
 </div>
 
 <div class="form-group">
-  <%= f.label :southamerican %>
+  <%= f.label :southamerican, class: "col-md-2 control-label" %>
   <%= f.check_box :southamerican %>
 </div>
 
 <div class="form-group">
-  <%= f.label :willeatanything %>
+  <%= f.label :willeatanything, class: "col-md-2 control-label" %>
   <%= f.check_box :willeatanything %>
 </div>
 
 <div class="form-group">
-  <%= f.label :wine %>
+  <%= f.label :wine, class: "col-md-2 control-label" %>
   <%= f.check_box :wine %>
 </div>
 
 <h2>Entertainment</h2>
 <div class="form-group">
-  <%= f.label :amusementparks %>
+  <%= f.label :amusementparks, class: "col-md-2 control-label"  %>
   <%= f.check_box :amusementparks %>
 </div>
 
 <div class="form-group">
-  <%= f.label :artgalleries %>
+  <%= f.label :artgalleries, class: "col-md-2 control-label"  %>
   <%= f.check_box :artgalleries %>
 </div>
 
 <div class="form-group">
-  <%= f.label :bars %>
+  <%= f.label :bars, class: "col-md-2 control-label"  %>
   <%= f.check_box :bars %>
 </div>
 
 <div class="form-group">
-  <%= f.label :comedyevents %>
+  <%= f.label :comedyevents, class: "col-md-2 control-label"  %>
   <%= f.check_box :comedyevents %>
 </div>
 
 <div class="form-group">
-  <%= f.label :concerts %>
+  <%= f.label :concerts, class: "col-md-2 control-label"  %>
   <%= f.check_box :concerts %>
 </div>
 
 <div class="form-group">
-  <%= f.label :conventions %>
+  <%= f.label :conventions, class: "col-md-2 control-label"  %>
   <%= f.check_box :conventions %>
 </div>
 
 <div class="form-group">
-  <%= f.label :dancing %>
+  <%= f.label :dancing, class: "col-md-2 control-label"  %>
   <%= f.check_box :dancing %>
 </div>
 
 <div class="form-group">
-  <%= f.label :exhibits %>
+  <%= f.label :exhibits, class: "col-md-2 control-label"  %>
   <%= f.check_box :exhibits %>
 </div>
 
 <div class="form-group">
-  <%= f.label :festivals %>
+  <%= f.label :festivals, class: "col-md-2 control-label"  %>
   <%= f.check_box :festivals %>
 </div>
 
 <div class="form-group">
-  <%= f.label :livemusic %>
+  <%= f.label :livemusic, class: "col-md-2 control-label"  %>
   <%= f.check_box :livemusic %>
 </div>
 
 <div class="form-group">
-  <%= f.label :lounges %>
+  <%= f.label :lounges, class: "col-md-2 control-label"  %>
   <%= f.check_box :lounges %>
 </div>
 
 <div class="form-group">
-  <%= f.label :movies %>
+  <%= f.label :movies, class: "col-md-2 control-label"  %>
   <%= f.check_box :movies %>
 </div>
 
 <div class="form-group">
-  <%= f.label :museums %>
+  <%= f.label :museums, class: "col-md-2 control-label"  %>
   <%= f.check_box :museums %>
 </div>
 
 <div class="form-group">
-  <%= f.label :nightclubs %>
+  <%= f.label :nightclubs, class: "col-md-2 control-label"  %>
   <%= f.check_box :nightclubs %>
 </div>
 
 <div class="form-group">
-  <%= f.label :performingarts %>
+  <%= f.label :performingarts, class: "col-md-2 control-label"  %>
   <%= f.check_box :performingarts %>
 </div>
 
 <div class="form-group">
-  <%= f.label :theatre %>
+  <%= f.label :theatre, class: "col-md-2 control-label" %>
   <%= f.check_box :theatre %>
 </div>
 
 <div>
   <%= hidden_field_tag :redirect_location, 'four_moreinterests' %>
   <%= f.submit "Sign Up", class: "btn btn-primary" %>
-</div>
-
-<% end %>
+  <fieldset>
+  </div>
+  <% end %>
+  </div>
+  </div>
+  </div>
+  </div>
