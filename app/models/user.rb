@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
     current_user_array = []
     user_array = []
 
-    current_user.each do |key, value|
+    current_user.attributes.each do |key, value|  #current_user is placeholder
       if value == nil
         current_user_array << ""
       else
@@ -43,7 +43,8 @@ class User < ActiveRecord::Base
      end
     end
 
-    user.each do |key, value|
+    user.attributes.each do |key, value|
+      # if key.respond_to? :boolean#current_user is placeholder
       if value == nil
         user_array << ""
       else
@@ -58,9 +59,8 @@ class User < ActiveRecord::Base
       if user1 && user2 == true
         count = count + 1
       end
+    end
     return count
-
-
 
 
   end
