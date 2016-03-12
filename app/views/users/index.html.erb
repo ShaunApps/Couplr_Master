@@ -31,7 +31,8 @@
 <center>
 
          <div class="intro-header">
-<h1>INDEX!!!</h1>
+
+<div class="search-bar">
 <%= form_tag(action: "filter", method: "post") do %>
   <%= label_tag(:min, "Partner one's age is between") %>
   <%= number_field_tag(:min) %>
@@ -40,7 +41,7 @@
   <%= number_field_tag(:max) %>
   <%= submit_tag("Search") %>
 <% end %>
-
+</div>
 
 <% @users.each do |user| %>
 <%= link_to user.username, user_path(user) %>
@@ -77,6 +78,7 @@
             </h3>
             <p>Profile Info</p>
         </div>
+
         <div class="col-md-4 portfolio-item">
             <a href="#">
                 <img class="img-responsive" src="http://placehold.it/700x400" alt="">

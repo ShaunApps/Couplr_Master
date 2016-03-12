@@ -49,5 +49,3 @@
     $("#overlay").hide();
     $("#dialog").fadeOut(300);
  }
-
- 

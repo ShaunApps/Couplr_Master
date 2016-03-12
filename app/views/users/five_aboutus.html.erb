@@ -43,7 +43,7 @@
 <% end %>
 
 <div class="row">
-  <div class="col-md-8 col-sm-6 col-xs-12">
+  <div class="col-md-8 col-sm-8 col-xs-8 col-sm-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <i class="icon-calendar"></i>
@@ -52,7 +52,7 @@
       <div class="panel-body">
 
 <div class="form-group">
-  <%= f.label :about_us, "Anything else you want others to know?" %>
+  <%= f.label :about_us, "Anything else you want others to know?" , class: "col-md-6 control-label" %>
   <!-- <%= f.text_field :about_us %> -->
   <textarea class = "form-control" rows = "3"></textarea>
 </div>
@@ -74,10 +74,11 @@
   <%= f.text_field :ideal_friends %>
 </div> -->
 
-
+</div>
 <div>
   <%= hidden_field_tag :redirect_location, 'six_login' %>
-  <%= f.submit "Sign Up", class: "btn btn-primary" %>
+  <%= f.submit "Sign Up", class: "btn btn-default btn-lg" %>
+  <div class="col-md-5 control-label">
 </div>
 
 <% end %>
