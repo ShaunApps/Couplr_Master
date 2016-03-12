@@ -4,7 +4,16 @@ class UsersController < ApplicationController
   def index
   #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
- end
+  #  @users.filtered_by_age(min: 25, max: 52)
+  end
+
+  def filter
+    puts "/"*50
+    p params
+    puts "/"*50
+    @users = User.filtered_by_age(min: params[:min], max: params[:max])
+    render "index"
+  end
 
   def new
     @user = User.new
@@ -27,7 +36,32 @@ class UsersController < ApplicationController
      redirect_to :back
   end
 
+  # def age
+  #   now = Time.now.utc.to_date
+  #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  # end
+
   def update
+
+    now = Time.now.utc
+
+    # ponebyear = @user.
+    # ponebmonth
+    # ponebday
+    # ptwobyear
+    # ptwobmonth
+    # ptwobday
+    p "$$$"*100
+    p now.year
+    p "HERE PARAMS #{params}"
+    p @user.ponebyear.to_i
+    p @user.ptwobyear.to_i
+    @user.age_one = (now.year - @user.ponebyear.to_i - ((now.month > @user.ponebmonth.to_i || (now.month == @user.ponebmonth.to_i && now.day >= @user.ponebday.to_i)) ? 0 : 1))
+    @user.age_two = (now.year - @user.ptwobyear.to_i - ((now.month > @user.ptwobmonth.to_i || (now.month == @user.ptwobmonth.to_i && now.day >= @user.ptwobday.to_i)) ? 0 : 1))
+
+
+
+
     respond_to do |format|
       if @user.update(user_params)
         if params[:redirect_location] == 'two_upload_photo'
@@ -243,7 +277,9 @@ class UsersController < ApplicationController
              :videogames,
              :smoking,
              :about_us,
-             :ideal_friends
+             :ideal_friends,
+             :min,
+             :max
               )
   end
 
