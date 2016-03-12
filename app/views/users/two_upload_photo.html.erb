@@ -15,7 +15,7 @@
                 <li>
                 <% if user_signed_in? %>
 
-                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Hi there, #{current_user.username}", "#" %></li>
                     <li><%= link_to "Inbox", mailbox_inbox_path %></li>
                     <li><%= link_to "Logout", logout_path %></li>
                 <% else %>
@@ -36,7 +36,14 @@
                           <div class="panel panel-default">
                             <div class="panel-heading clearfix">
                               <i class="icon-calendar"></i>
-                              <h3 class="panel-title">Inputs</h3>
+                              <h3 class="panel-title">Upload a photo</h3>
+                              <ul class="nav navbar-nav navbar-right">
+                                  <li>
+                                  <% if user_signed_in? %>
+
+                                      <%= link_to "skip" %></li>
+                                    </ul>
+                                    <% end %>
                             </div>
 
 
@@ -76,5 +83,5 @@
 
 
                       <% end %>
-<h1>Profile pic page</h1>
-<h2>We need to add a skip button, and option to upload more photos </h2>
+
+<h2>We need to add option to upload more photos </h2>

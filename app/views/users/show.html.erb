@@ -16,7 +16,7 @@
                 <li>
                 <% if user_signed_in? %>
 
-                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Hi there, #{current_user.username}", "#" %></li>
                     <li><%= link_to "Inbox", mailbox_inbox_path %></li>
                     <li><%= link_to "Logout", logout_path %></li>
                 <% else %>
@@ -46,9 +46,9 @@
          		</div>
          		<div class="col-md-8 column">
 
-         				<p>
+         				<p><h4>
          					Happy Couple
-         				</p> <br>
+         				</p></h4><br>
                 <small>27/43<br>
                   Married<br>
                     <cite>Fort Lauderdale Florida</cite></small>
@@ -57,11 +57,14 @@
          		<div class="col-md-2 column">
 
                <% if current_user != @user %>
-               <input type="button" id="btnShowModal" value="Send a message" class="btn btn-default btn-block">
+               <input type="button" id="btnShowModal" value="Message" class="btn btn-default btn-block">
                <% end %>
 
                           <button class="btn btn-default btn-block" type="button">
                              Report User
+                          </button>
+                          <button class="btn btn-default btn-block" type="button">
+                             Edit Profile
                           </button>
 
 
@@ -133,7 +136,7 @@
 						 <div class="row clearfix">
                 			<div class="col-md-8 column">
             					<p><br>
-                        
+
                                     We met at work and have been happily married for 3 years! We're looking to make friends with similar interests.
             					</p>
                                 <hr/>

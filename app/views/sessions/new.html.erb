@@ -21,11 +21,10 @@
       </div>
 
 
-<section id="login">
-      <div class="container">
-          <div class="row log">
 
-  <div class="col-sm-1 col-sm-offset-1 left-reg">
+      <div class="container">
+
+  <div id="login-grp" class="col-md-2 col-md-offset-4">
 
 <%= form_tag sessions_path do %>
   <div class="field">
@@ -37,12 +36,13 @@
   <%= password_field_tag :password %>
 </div>
 
-<div class="login-btn">
+<div id="login-btn">
   <%= submit_tag "Let's Go", class: "btn btn-default btn-lg" %>
 
-      </div>
+
     </div>
   </div>
+</div>
 </div>
 </div>
 </div>

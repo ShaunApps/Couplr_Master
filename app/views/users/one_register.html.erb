@@ -34,32 +34,6 @@
 
            <!-- Row start -->
            <!-- <div class="row">
-             <div class="col-md-12 col-sm-12 col-xs-12">
-               <div class="panel panel-default">
-                 <div class="panel-heading clearfix">
-                   <i class="icon-calendar"></i>
-                   <h3 class="panel-title">Check Boxes &amp; Radio Addons</h3>
-                 </div>
-
-                 <div class="panel-body">
-                   <div class="row">
-                     <div class="col-md-3 col-sm-3">
-                       <div class="input-group">
-
-                       </div>
-                     </div>
-                   </div>
-                   </div>
-                   </div>
-                 </div>
-               </div>
- -->
-
-           <!-- Row end -->
-
-
-           <!-- Row start -->
-           <!-- <div class="row">
              <div class="col-md-12 col-sm-6 col-xs-12">
                <div class="panel panel-default">
                  <div class="panel-heading clearfix">
@@ -149,11 +123,11 @@
 <h4>Start making friends by adding to your profile.</h4>
 
 <div class="row">
-  <div class="col-md-8 col-sm-6 col-xs-12">
+  <div class="col-md-8 col-sm-10 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <i class="icon-calendar"></i>
-        <h3 class="panel-title">Inputs</h3>
+        <h3 class="panel-title">Profile</h3>
       </div>
       <div class="panel-body">
 
@@ -161,7 +135,6 @@
 <%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
 
 
-<h1>Register page</h1>
 <%#= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <%= form_for @user, method: :patch do |f| %>
 
@@ -180,7 +153,6 @@
 <!-- We can add terms and services and captcha if we have time -->
 
 <div class="form-group">
-<<<<<<< HEAD
   <%= f.label :partner_two_birth_month, "Partner 1 Birthday Month", class: "col-md-2 control-label" %>
   <%= f.date_field :ponebmonth %>
 </div>
@@ -212,7 +184,6 @@
 
 <div class="form-group">
   <%= f.label :relationship_status, class: "col-md-2 control-label"  %>
-=======
   <%= f.label :partner_one_birthday %>
   <%= f.date_field :birthday_one %>
 </div>
@@ -254,7 +225,6 @@
 
 <div class="form-group">
   <%= f.label :relationship_status %>
->>>>>>> f3eadb2cdd0bf8ea768a2fbe4dfc2ae51907eff9
   <%= f.text_field :relationship_status %>
 </div>
 
@@ -315,4 +285,4 @@
 </div>
 </div>
 </div>
-</div>
+<% end %>
