@@ -16,34 +16,44 @@
 <!-- We can add terms and services and captcha if we have time -->
 
 <div class="form-group">
-  <%= f.label :partner_one_birth_month %>
-  <%= f.number_field :ponebmonth %>
+  <%= f.label :partner_one_birthday %>
+  <%= f.date_field :birthday_one %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_one_birth_day %>
-  <%= f.number_field :ponebday %>
+  <%= f.label :partner_two_birthday %>
+  <%= f.date_field :birthday_two %>
+</div>
+<!--
+<div class="form-group">
+  <%#= f.label :partner_one_birth_month %>
+  <%#= f.number_field :ponebmonth %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_one_birth_year %>
-  <%= f.number_field :ponebyear %>
+  <%#= f.label :partner_one_birth_day %>
+  <%#= f.number_field :ponebday %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_two_birth_month %>
-  <%= f.number_field :ptwobmonth %>
+  <%#= f.label :partner_one_birth_year %>
+  <%#= f.number_field :ponebyear %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_two_birth_day %>
-  <%= f.number_field :ptwobday %>
+  <%#= f.label :partner_two_birth_month %>
+  <%#= f.number_field :ptwobmonth %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_two_birth_year %>
-  <%= f.number_field :ptwobyear %>
+  <%#= f.label :partner_two_birth_day %>
+  <%#= f.number_field :ptwobday %>
 </div>
+
+<div class="form-group">
+  <%#= f.label :partner_two_birth_year %>
+  <%#= f.number_field :ptwobyear %>
+</div> -->
 
 <div class="form-group">
   <%= f.label :relationship_status %>
