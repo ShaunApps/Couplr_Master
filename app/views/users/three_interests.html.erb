@@ -1,15 +1,36 @@
-<div class="container">
 
-<h4>Start making friends by adding to your couplr profile.</h4>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="">couplr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                <% if user_signed_in? %>
 
-<div class="row">
-  <div class="col-md-8 col-sm-6 col-xs-12">
-    <div class="panel panel-default">
-      <div class="panel-heading clearfix">
-        <i class="icon-calendar"></i>
-        <h3 class="panel-title">Inputs</h3>
-      </div>
-      <div class="panel-body">
+                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+                    <li><%= link_to "Logout", logout_path %></li>
+                <% else %>
+                    <li class="active"><%= link_to "Login", login_path %></li>
+                    <li><%= link_to "Sign up", signup_path %></li>
+                <% end %>
+              </ul>
+            </div></.nav-collapse
+          </div>
+         </nav>
+         <div class="container">
+
+<h4>Start making friends by adding to your profile.</h4>
+
 
 <%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
 
@@ -26,7 +47,15 @@
 
 <!-- We might want to make these f.select fields, but we'll do that when we have time -->
 <!-- We can add terms and services and captcha if we have time -->
-<h2>Movies</h2>
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Movies</h3>
+      </div>
+      <div class="panel-body">
+
 <div class="form-group">
   <%= f.label :action, class: "col-md-2 control-label" %>
   <%= f.check_box :action %>
@@ -91,8 +120,20 @@
   <%= f.label :western, class: "col-md-2 control-label" %>
   <%= f.check_box :western %>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-<h2>Music</h2>
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Music</h3>
+      </div>
+      <div class="panel-body">
+
 <div class="form-group">
   <%= f.label :blues, class: "col-md-2 control-label" %>
   <%= f.check_box :blues %>
@@ -152,8 +193,21 @@
   <%= f.label :topforty, class: "col-md-2 control-label" %>
   <%= f.check_box :topforty %>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-<h2>Dining</h2>
+
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Dining</h3>
+      </div>
+      <div class="panel-body">
+
 <div class="form-group">
   <%= f.label :african, class: "col-md-2 control-label" %>
   <%= f.check_box :african %>
@@ -198,8 +252,20 @@
   <%= f.label :wine, class: "col-md-2 control-label" %>
   <%= f.check_box :wine %>
 </div>
+</div>
+</div>
+</div>
+</div>
 
-<h2>Entertainment</h2>
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Entertainment</h3>
+      </div>
+      <div class="panel-body">
+
 <div class="form-group">
   <%= f.label :amusementparks, class: "col-md-2 control-label"  %>
   <%= f.check_box :amusementparks %>

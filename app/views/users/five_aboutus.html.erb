@@ -1,7 +1,36 @@
-<h2>About us(bio) / ideal friends</h2>
 
-<h1>More-Interest page</h1>
-<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="">couplr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                <% if user_signed_in? %>
+
+                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
+                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
+                    <li><%= link_to "Logout", logout_path %></li>
+                <% else %>
+                    <li class="active"><%= link_to "Login", login_path %></li>
+                    <li><%= link_to "Sign up", signup_path %></li>
+                <% end %>
+              </ul>
+            </div></.nav-collapse
+          </div>
+         </nav>
+         <div class="container">
+
+
+<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -13,18 +42,37 @@
 </div>
 <% end %>
 
+<div class="row">
+  <div class="col-md-8 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">About Us</h3>
+      </div>
+      <div class="panel-body">
 
-<h2>About us</h2>
 <div class="form-group">
-  <%= f.label :about_us %>
-  <%= f.text_field :about_us %>
+  <%= f.label :about_us, "Anything else you want others to know?" %>
+  <!-- <%= f.text_field :about_us %> -->
+  <textarea class = "form-control" rows = "3"></textarea>
 </div>
+</div>
+</div>
+</div>
+</div>
+<!--
+<form role = "form">
+   <div class = "form-group">
+      <label for = "name">Text Area</label>
+      <textarea class = "form-control" rows = "3"></textarea>
+   </div>
 
-<h2>Ideal friends</h2>
+</form> -->
+<!-- <h2>Ideal friends</h2>
 <div class="form-group">
   <%= f.label :ideal_friends %>
   <%= f.text_field :ideal_friends %>
-</div>
+</div> -->
 
 
 <div>

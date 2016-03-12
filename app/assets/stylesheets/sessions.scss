@@ -32,9 +32,11 @@ h6 {
     font-weight: 400;
 }
 
-
+.row-signup {
+  color: black;
+}
 .btn-default {
-  color: #fff !important;
+  color: #fbfbf4 !important;
 }
 
 .login-button {
@@ -203,15 +205,9 @@ p.copyright {
     text-transform: none;
     font-weight: 200;
     letter-spacing: 0px;
-    background-color: #fff !important;
+    background-color: #fbfbf4 !important;
     border-color: #fff;
     color: #000;
-}
-
-.login-btn {
-    padding-top: 5px;
-    margin-left: 35px;
-    background-color: #fff;
 }
 
 .row.log {
