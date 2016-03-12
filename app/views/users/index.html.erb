@@ -37,7 +37,7 @@
 <!--Testing this for displaying suggestions-->
 <div class="container">
   <% for user in @suggestions %>
-  <%= link_to user[0].username, user_path(user[0])  %>
+  <%= link_to user.username, user_path(user)  %>
   <% end %>
 
 </div>

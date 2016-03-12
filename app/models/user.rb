@@ -35,20 +35,24 @@ class User < ActiveRecord::Base
     current_user_array = []
     user_array = []
 
+
+
+    user.attributes.each do |key, value|
+      # if value.respond_to? :boolean
+       if value == nil
+         user_array << ""
+       else
+        user_array << value  #need to downcase
+      end
+    end
+
+
+
     current_user.attributes.each do |key, value|  #current_user is placeholder
       if value == nil
         current_user_array << ""
       else
-       current_user_array << value.downcase
-     end
-    end
-
-    user.attributes.each do |key, value|
-      # if key.respond_to? :boolean#current_user is placeholder
-      if value == nil
-        user_array << ""
-      else
-       user_array << value.downcase
+       current_user_array << value #need to downcase
      end
     end
 
