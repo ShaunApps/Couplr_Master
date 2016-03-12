@@ -8,10 +8,30 @@ class UsersController < ApplicationController
   end
 
   def filter
-    puts "/"*50
-    p params
-    puts "/"*50
-    @users = User.filtered_by_age(min: params[:min], max: params[:max])
+     array_a = []
+     array_b = []
+     array_a = User.filtered_by_age_one(params[:min], params[:max])#.filtered_by_age_two(params[:min_two], params[:max_two])
+  puts "-"*50
+     p array_a
+  puts "-"*50
+
+  #    array_b = User.filtered_by_age_two(params[:min_two], params[:max_two])
+  # puts "$"*50
+  #    p array_b
+  # puts "$"*50
+
+    #  @array.flatten!
+    # dup = array.select{|element| array.count(element) > 1 }
+    # dup.uniq!
+      puts "*"*50
+      p array_c = array_a + array_b
+      puts "*"*50
+
+  puts "/"*50
+    @users = User.filtered_by_age_one(params[:min], params[:max]).filtered_by_age_two(params[:min_two], params[:max_two])
+    p @users
+  puts "/"*50
+    #p filtered_users
     render "index"
   end
 
@@ -43,8 +63,8 @@ class UsersController < ApplicationController
 
   def update
 
-    now = Time.now.utc
-    p "hi thereeeee"
+    #now = Time.now.utc
+    #p "hi thereeeee"
     #@user = User.new
     @user.birthday_one = params[:user][:birthday_one]
     @user.birthday_two = params[:user][:birthday_two]
@@ -54,11 +74,11 @@ class UsersController < ApplicationController
     # ptwobyear
     # ptwobmonth
     # ptwobday
-    p "$$$"*50
-    p now.year
-    p "HERE PARAMS #{params}"
-    p @user.birthday_one
-    p @user.birthday_two
+    ###p "$$$"*50
+    ###p now.year
+    ###p "HERE PARAMS #{params}"
+    ###p @user.birthday_one
+    ###p @user.birthday_two
   #  @user.age_one = (now.year - @user.ponebyear.to_i - ((now.month > @user.ponebmonth.to_i || (now.month == @user.ponebmonth.to_i && now.day >= @user.ponebday.to_i)) ? 0 : 1))
   #  @user.age_two = (now.year - @user.ptwobyear.to_i - ((now.month > @user.ptwobmonth.to_i || (now.month == @user.ptwobmonth.to_i && now.day >= @user.ptwobday.to_i)) ? 0 : 1))
 
@@ -68,8 +88,6 @@ class UsersController < ApplicationController
 
     @user.age_two = today.year - @user.birthday_two.year
     @user.age_two -= 1 if @user.birthday_two.strftime("%m%d").to_i > today.strftime("%m%d").to_i
-
-
 
     respond_to do |format|
       if @user.update(user_params)
@@ -289,6 +307,8 @@ class UsersController < ApplicationController
              :ideal_friends,
              :min,
              :max,
+             :min_two,
+             :max_two,
              :birthday_one,
              :birthday_two
               )
