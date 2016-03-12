@@ -27,7 +27,21 @@
           </div>
          </nav>
 
+
 <center>
+
+         <div class="intro-header">
+<h1>INDEX!!!</h1>
+<%= form_tag(action: "filter", method: "post") do %>
+  <%= label_tag(:min, "Partner one's age is between") %>
+  <%= number_field_tag(:min) %>
+  <%= label_tag("and") %>
+  <%= label_tag(:max, "Search for:") %>
+  <%= number_field_tag(:max) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <% @users.each do |user| %>
 <%= link_to user.username, user_path(user) %>
 <% end %>

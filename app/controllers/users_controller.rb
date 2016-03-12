@@ -4,7 +4,16 @@ class UsersController < ApplicationController
   def index
   #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
- end
+  #  @users.filtered_by_age(min: 25, max: 52)
+  end
+
+  def filter
+    puts "/"*50
+    p params
+    puts "/"*50
+    @users = User.filtered_by_age(min: params[:min], max: params[:max])
+    render "index"
+  end
 
   def new
     @user = User.new
@@ -27,7 +36,41 @@ class UsersController < ApplicationController
      redirect_to :back
   end
 
+  # def age
+  #   now = Time.now.utc.to_date
+  #   now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
+  # end
+
   def update
+
+    now = Time.now.utc
+    p "hi thereeeee"
+    #@user = User.new
+    @user.birthday_one = params[:user][:birthday_one]
+    @user.birthday_two = params[:user][:birthday_two]
+    # ponebyear = @user.
+    # ponebmonth
+    # ponebday
+    # ptwobyear
+    # ptwobmonth
+    # ptwobday
+    p "$$$"*50
+    p now.year
+    p "HERE PARAMS #{params}"
+    p @user.birthday_one
+    p @user.birthday_two
+  #  @user.age_one = (now.year - @user.ponebyear.to_i - ((now.month > @user.ponebmonth.to_i || (now.month == @user.ponebmonth.to_i && now.day >= @user.ponebday.to_i)) ? 0 : 1))
+  #  @user.age_two = (now.year - @user.ptwobyear.to_i - ((now.month > @user.ptwobmonth.to_i || (now.month == @user.ptwobmonth.to_i && now.day >= @user.ptwobday.to_i)) ? 0 : 1))
+
+    today = Date.today
+    @user.age_one = today.year - @user.birthday_one.year
+    @user.age_one -= 1 if @user.birthday_one.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+
+    @user.age_two = today.year - @user.birthday_two.year
+    @user.age_two -= 1 if @user.birthday_two.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+
+
+
     respond_to do |format|
       if @user.update(user_params)
         if params[:redirect_location] == 'two_upload_photo'
@@ -243,7 +286,11 @@ class UsersController < ApplicationController
              :videogames,
              :smoking,
              :about_us,
-             :ideal_friends
+             :ideal_friends,
+             :min,
+             :max,
+             :birthday_one,
+             :birthday_two
               )
   end
 

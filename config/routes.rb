@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :images
 
   resources :users
+  post 'filter' => 'users#filter', as: 'filter'
 
 
   get 'signup' => 'users#new', as: 'signup'

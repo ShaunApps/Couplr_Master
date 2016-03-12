@@ -1,3 +1,4 @@
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -159,6 +160,11 @@
 
 <%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
 
+
+<h1>Register page</h1>
+<%#= form_for @user, url: user_path(@user), method: :patch do |f| %>
+<%= form_for @user, method: :patch do |f| %>
+
 <% if @user.errors.any? %>
 <div class="error_messages">
   <h2>Form is invalid</h2>
@@ -174,6 +180,7 @@
 <!-- We can add terms and services and captcha if we have time -->
 
 <div class="form-group">
+<<<<<<< HEAD
   <%= f.label :partner_two_birth_month, "Partner 1 Birthday Month", class: "col-md-2 control-label" %>
   <%= f.date_field :ponebmonth %>
 </div>
@@ -205,6 +212,49 @@
 
 <div class="form-group">
   <%= f.label :relationship_status, class: "col-md-2 control-label"  %>
+=======
+  <%= f.label :partner_one_birthday %>
+  <%= f.date_field :birthday_one %>
+</div>
+
+<div class="form-group">
+  <%= f.label :partner_two_birthday %>
+  <%= f.date_field :birthday_two %>
+</div>
+<!--
+<div class="form-group">
+  <%#= f.label :partner_one_birth_month %>
+  <%#= f.number_field :ponebmonth %>
+</div>
+
+<div class="form-group">
+  <%#= f.label :partner_one_birth_day %>
+  <%#= f.number_field :ponebday %>
+</div>
+
+<div class="form-group">
+  <%#= f.label :partner_one_birth_year %>
+  <%#= f.number_field :ponebyear %>
+</div>
+
+<div class="form-group">
+  <%#= f.label :partner_two_birth_month %>
+  <%#= f.number_field :ptwobmonth %>
+</div>
+
+<div class="form-group">
+  <%#= f.label :partner_two_birth_day %>
+  <%#= f.number_field :ptwobday %>
+</div>
+
+<div class="form-group">
+  <%#= f.label :partner_two_birth_year %>
+  <%#= f.number_field :ptwobyear %>
+</div> -->
+
+<div class="form-group">
+  <%= f.label :relationship_status %>
+>>>>>>> f3eadb2cdd0bf8ea768a2fbe4dfc2ae51907eff9
   <%= f.text_field :relationship_status %>
 </div>
 
