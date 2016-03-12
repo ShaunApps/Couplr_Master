@@ -2,15 +2,17 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
+
     render json: params
     # include_only [:zipcode, :address, etc...]
-  #  @users = User.all
-   @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
-   @suggestions = User.get_match_array()
+    #  @users = User.all
+    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+    #  @suggestions = User.get_match_array()
 
-  #  render plain: params
-  #  @suggestions = User.get_match_array()
-end
+    #@suggestions = User.get_match_array()
+  end
+
+
 
   def new
     @user = User.new
@@ -34,6 +36,19 @@ end
   end
 
   def update
+
+    # address = "#{params[:user][:street_number]}%20#{params[:user][:street]}%20#{params[:user][:city]}%20#{params[:user][:state]}%20#{params[:user][:country_location]}%20#{params[:user][:zip_code]}"
+    # url = "http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=AIzaSyDZREAL41XlqYECcPJAriMQi5ak8wUEEVo"
+    #
+    # response = HTTParty.get(url)
+    #
+    #
+    # @user.latitude = response['results'][0]['geometry']['location']['lat']
+    # @user.longitude = response['results'][0]['geometry']['location']['lng']
+
+
+
+
     respond_to do |format|
       if @user.update(user_params)
         if params[:redirect_location] == 'two_upload_photo'
@@ -106,7 +121,7 @@ end
 
   def get_match_array
     # @suggestions = User.get_match_array()
-    @suggestions = User.get_match_array()
+    # @suggestions = User.get_match_array()
 
   end
 
@@ -254,7 +269,9 @@ end
              :videogames,
              :smoking,
              :about_us,
-             :ideal_friends
+             :ideal_friends,
+             :latitude,
+             :longitude
               )
   end
 
