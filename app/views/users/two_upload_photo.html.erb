@@ -1,34 +1,5 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand topnav" href="">couplr</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                <% if user_signed_in? %>
-
-                    <li><%= link_to "Hi there, #{current_user.username}", "#" %></li>
-                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-                    <li><%= link_to "Logout", logout_path %></li>
-                <% else %>
-                    <li class="active"><%= link_to "Login", login_path %></li>
-                    <li><%= link_to "Sign up", signup_path %></li>
-                <% end %>
-              </ul>
-            </div></.nav-collapse
-          </div>
-         </nav>
-         <!-- <div class="intro-header"> -->
-
-         <div class="container">
+<%= render 'layouts/nav' %>
+         <div class="container main-content">
 
                       <!-- Row start -->
                       <div class="row">
@@ -77,17 +48,21 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div>
-                  </div>
-                      </form>
-                  </div>
-                      <!-- Row end -->
-
+                      <div>
                       <%= hidden_field_tag :redirect_location, 'three_interests' %>
                       <%= f.submit "Sign Up", class: "btn btn-default btn-lg" %>
                       <div class="col-md-5 control-label">
                       <% end %>
+                    </div>
+
+                  </div>
+                </div>
+                  </div>
+
+
+                  </div>
+                      <!-- Row end -->
+
+
 </div>
 <h2>We need to add option to upload more photos </h2>

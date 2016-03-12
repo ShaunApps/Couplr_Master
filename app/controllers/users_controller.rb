@@ -136,22 +136,27 @@ class UsersController < ApplicationController
   #       format.json { render json: @user.errors, status: :unprocessable_entity }
   #     end
   #   end
+  render layout: "sign.html.erb"
   end
 
   def two_upload_photo
     @user = User.find(params[:id])
+    render layout: "sign.html.erb"
   end
 
   def three_interests
     @user = User.find(params[:id])
+    render layout: "sign.html.erb"
   end
 
   def four_moreinterests
     @user = User.find(params[:id])
+    render layout: "sign.html.erb"
   end
 
   def five_aboutus
     @user = User.find(params[:id])
+    render layout: "sign.html.erb"
   end
 
   def six_login
