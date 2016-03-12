@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
 
 
 
+
+
  # def recipients_options(chosen_recipient = nil)
  #   s = ''
  #   User.all.each do |user|
@@ -41,7 +43,6 @@ class ApplicationController < ActionController::Base
 
 
  private
-
 
  def current_user
    @current_user ||= User.find_by(id: session[:user_id])
