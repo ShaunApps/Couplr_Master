@@ -31,9 +31,13 @@
 <%= form_tag(action: "filter", method: "post") do %>
   <%= label_tag(:min, "Partner one's age is between") %>
   <%= number_field_tag(:min) %>
-  <%= label_tag("and") %>
-  <%= label_tag(:max, "Search for:") %>
+  <%= label_tag(:max, "and") %>
   <%= number_field_tag(:max) %>
+  <br>
+  <%= label_tag(:min_two, "Partner two's age is between") %>
+  <%= number_field_tag(:min_two) %>
+  <%= label_tag(:max_two, "and") %>
+  <%= number_field_tag(:max_two) %>
   <%= submit_tag("Search") %>
 <% end %>
 
