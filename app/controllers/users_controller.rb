@@ -3,9 +3,11 @@ class UsersController < ApplicationController
 
   def index
     render json: params
+    # include_only [:zipcode, :address, etc...]
   #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
    @suggestions = User.get_match_array()
+
   #  render plain: params
   #  @suggestions = User.get_match_array()
 end
