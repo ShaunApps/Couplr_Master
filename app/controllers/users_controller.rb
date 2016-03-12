@@ -4,11 +4,10 @@ class UsersController < ApplicationController
   def index
   #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+   @suggestions = User.get_match_array()
   #  render plain: params
   #  @suggestions = User.get_match_array()
-
-
- end
+end
 
   def new
     @user = User.new

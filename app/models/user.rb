@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   def self.get_match_array()
     array_of_arrays = []
     self.all.each do |user|
-      score = self.get_match_score(current_user, user)
+      score = self.get_match_score(@current_user, user)
       user_score = [user, score]
       array_of_arrays << user_score
     end
