@@ -12,7 +12,7 @@ $(document).ready(ready);
 $(document).on("page:load",ready);
 
 
-
+jQuery ->$('.chosen-select').chosen()
 
 //alex work here
 
