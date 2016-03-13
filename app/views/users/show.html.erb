@@ -47,11 +47,12 @@
          		<div class="col-md-8 column">
 
          				<p><h4>
-         					Happy Couple
+         					<%= @user.username %>
          				</p></h4><br>
-                <small>27/43<br>
-                  Married<br>
-                    <cite>Fort Lauderdale Florida</cite></small>
+                <p><%= @user.partner_one_name %> and <%=@user.partner_two_name %></p><br>
+                <small><%= @user.age_one %> / <%= @user.age_two %> <br>
+                  <%=@user.relationship_status%><br>
+                    <cite><%= @user.city %> <%=@user.state %></cite></small>
 
          		</div>
          		<div class="col-md-2 column">
