@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:show, :index, :filter, :send_message_to_user, :update]
+
 
   def index
   #  @users = User.all
@@ -66,8 +68,7 @@ class UsersController < ApplicationController
     #now = Time.now.utc
     #p "hi thereeeee"
     #@user = User.new
-    @user.birthday_one = params[:user][:birthday_one]
-    @user.birthday_two = params[:user][:birthday_two]
+
     # ponebyear = @user.
     # ponebmonth
     # ponebday
@@ -82,12 +83,17 @@ class UsersController < ApplicationController
   #  @user.age_one = (now.year - @user.ponebyear.to_i - ((now.month > @user.ponebmonth.to_i || (now.month == @user.ponebmonth.to_i && now.day >= @user.ponebday.to_i)) ? 0 : 1))
   #  @user.age_two = (now.year - @user.ptwobyear.to_i - ((now.month > @user.ptwobmonth.to_i || (now.month == @user.ptwobmonth.to_i && now.day >= @user.ptwobday.to_i)) ? 0 : 1))
 
-    today = Date.today
-    @user.age_one = today.year - @user.birthday_one.year
-    @user.age_one -= 1 if @user.birthday_one.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+    if @user.birthday_one == nil
+      @user.birthday_one = params[:user][:birthday_one]
+      @user.birthday_two = params[:user][:birthday_two]
 
-    @user.age_two = today.year - @user.birthday_two.year
-    @user.age_two -= 1 if @user.birthday_two.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+      today = Date.today
+      @user.age_one = today.year - @user.birthday_one.year
+      @user.age_one -= 1 if @user.birthday_one.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+
+      @user.age_two = today.year - @user.birthday_two.year
+      @user.age_two -= 1 if @user.birthday_two.strftime("%m%d").to_i > today.strftime("%m%d").to_i
+    end
 
     respond_to do |format|
       if @user.update(user_params)
@@ -127,6 +133,8 @@ class UsersController < ApplicationController
 
   def one_register
     @user = User.find(params[:id])
+    # @user.birthday_one = params[:user][:birthday_one]
+    # @user.birthday_two = params[:user][:birthday_two]
   #   respond_to do |format|
   #     if @user.update(user_params)
   #       format.html { redirect_to two_upload_photo_path, notice: 'User was successfully updated.' }
