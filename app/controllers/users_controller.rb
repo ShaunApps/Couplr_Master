@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
 
     # address = "#{params[:user][:street_number]}%20#{params[:user][:street]}%20#{params[:user][:city]}%20#{params[:user][:state]}%20#{params[:user][:country_location]}%20#{params[:user][:zip_code]}"
-    # url = "http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=AIzaSyDZREAL41XlqYECcPJAriMQi5ak8wUEEVo"
+    # url = "http://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="
     #
     # response = HTTParty.get(url)
     #
