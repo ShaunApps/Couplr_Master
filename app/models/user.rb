@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :images
   scope :filtered_by_age_one, -> (min, max) {where ("(age_one >= #{min} AND age_one <= #{max})")}
   scope :filtered_by_age_two, -> (min, max) {where ("(age_two >= #{min} AND age_two <= #{max})")}
-  
+
 
   acts_as_messageable
 
@@ -15,6 +15,66 @@ class User < ActiveRecord::Base
   def mailboxer_email(object)
     self.email
   end
+
+
+ #  def self.get_match_array()
+ #   array_of_arrays = []
+ #   self.all.each do |user|
+ #     score = self.get_match_score(@current_user, user)
+ #     user_score = [user, score]
+ #     array_of_arrays << user_score
+ #   end
+ #   return array_of_arrays.sort{|a, b| b[1] <=> a[1]}
+ # end
+ #
+ #
+ #
+ #
+ # def self.get_match_score(current_user, user)
+ #
+ #   current_user_array = []
+ #   user_array = []
+ #
+ #
+ #
+ #   user.attributes.each do |key, value|
+ #     # if value.respond_to? :boolean
+ #      if value == nil
+ #        user_array << ""
+ #      else
+ #       user_array << value  #need to downcase
+ #     end
+ #   end
+ #
+ #
+ #
+ #   current_user.attributes.each do |key, value|  #current_user is placeholder
+ #     if value == nil
+ #       current_user_array << ""
+ #     else
+ #      current_user_array << value #need to downcase
+ #    end
+ #   end
+ #
+ #
+ #
+ #   count = 0
+ #   current_user_array.zip(user_array).each do |user1, user2|
+ #     if user1 && user2 == true
+ #       count = count + 1
+ #     end
+ #   end
+ #   return count
+ #
+ #
+ # end
+
+
+
+
+
+
+
 
 
 end

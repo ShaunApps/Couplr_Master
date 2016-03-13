@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user, only: [:show, :index, :filter, :send_message_to_user, :update]
+  before_action :authenticate_user, only: [:show, :index, :filter, :send_message_to_user, :update, :get_match_array, :get_match_score  ]
 
 
   def index
   #  @users = User.all
    @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
   #  @users.filtered_by_age(min: 25, max: 52)
+  #  @users = User.get_match_array
   end
 
   def filter
@@ -120,6 +121,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -130,6 +132,71 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+
+
+ #
+ #  def get_match_array
+ #   array_of_arrays = []
+ #   @users.all.each do |user|
+ #     score = get_match_score(@current_user, user)
+ #     user_score = [user, score]
+ #     array_of_arrays << user_score
+ #   end
+ #   return array_of_arrays.sort{|a, b| b[1] <=> a[1]}
+ # end
+ #
+ #
+ #
+ #
+ # def get_match_score(current_user, user)
+ #
+ #   current_user_array = []
+ #   user_array = []
+ #
+ #
+ #
+ #   user.attributes.each do |key, value|
+ #     # if value.respond_to? :boolean
+ #      if value == nil
+ #        user_array << ""
+ #      else
+ #       user_array << value  #need to downcase
+ #     end
+ #   end
+ #
+ #
+ #
+ #   current_user.attributes.each do |key, value|  #current_user is placeholder
+ #     if value == nil
+ #       current_user_array << ""
+ #     else
+ #      current_user_array << value #need to downcase
+ #    end
+ #   end
+ #
+ #
+ #
+ #   count = 0
+ #   current_user_array.zip(user_array).each do |user1, user2|
+ #     if user1 && user2 == true
+ #       count = count + 1
+ #     end
+ #   end
+ #   return count
+ #
+ # 
+ # end
+ #
+ #
+ #
+
+
+
+
+
+
+
 
   def one_register
     @user = User.find(params[:id])

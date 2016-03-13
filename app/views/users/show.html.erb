@@ -3,26 +3,33 @@
          <div class="container">
 
            <div class="row">
-             <div class="col-md-12 col-sm-6 col-xs-12">
-               <div class="panel panel-default">
-                 <div class="panel-heading clearfix">
+             <div class="col-md-12 col-sm-6 col-xs-12" >
+               <div class="panel panel-default", style="background-color:#e8f8f9">
+                 <div class="panel-heading clearfix", id="profileheading">
                    <i class="icon-calendar"></i>
-                   <h3 class="panel-title">Profile</h3>
+                   <h3 class="panel-title", style="">Profile</h3>
                  </div>
-                 <div class="panel-body">
+                 <div class="panel-body", style="background-color:#e8f8f9">
 
              <div class="row clearfix well">
          		<div class="col-md-2 column">
-         			<img class="img-thumbnail" alt="140x140" src="http://lorempixel.com/140/140/" />
+         			<!-- <img class="img-thumbnail" alt="140x140" src="http://lorempixel.com/140/140/" /> -->
+              <%= image_tag(@user.avatar_url, size: "175x175") if @user.avatar?%>
+
          		</div>
          		<div class="col-md-8 column">
 
-         				<p><h4>
-         					Happy Couple
-         				</p></h4><br>
-                <small>27/43<br>
-                  Married<br>
-                    <cite>Fort Lauderdale Florida</cite></small>
+         				<h4>
+         					<%= @user.username %>
+         				</h4>
+                <p>Couples: <%= @user.partner_one_name %> and <%=@user.partner_two_name %></p><br>
+                <ul class="profile-summary">
+                  <li><%= @user.age_one %></li>
+                  <li> <%= @user.age_two %></li>
+                  <li><%=@user.relationship_status%></li>
+                  <li><%#= @user.city %>Boca</li>
+                  <li> <%#=@user.state %>FL</li>
+                </ul>
 
          		</div>
          		<div class="col-md-2 column">
@@ -106,15 +113,17 @@
 					<div class="tab-pane active" id="panel-200304">
 						 <div class="row clearfix">
                 			<div class="col-md-8 column">
+                        <div class="col-md-6 column"
             					<p><br>
 
-                                    We met at work and have been happily married for 3 years! We're looking to make friends with similar interests.
+                                  <%= @user.about_us %>
             					</p>
                                 <hr/>
+                              </div>
 
             				</div>
             				<div class="col-md-4 column">
-            					<table class="table">
+            					<table class="table" id="usershowdetailbox">
             						<thead>
             							<tr>
             								<th>
@@ -133,10 +142,10 @@
             							</tr>
                                         <tr>
                 							<td>
-            									Ethinicity
+            									Has kids?
             								</td>
             								<td>
-            									White
+            									No
             								</td>
             							</tr>
 
@@ -158,42 +167,42 @@
             							</tr>
                                         <tr>
                         					<td>
-            									Drugs
+            									Interests:
             								</td>
             								<td>
-            									No
+
             								</td>
             							</tr>
             							<tr>
                         					<td>
-            									Religion
+                              Dogs
             								</td>
             								<td>
-            									Athiest
+                              Dancing
             								</td>
             							</tr>
                                         <tr>
                         					<td>
-            									Education
+                              Coffee
             								</td>
             								<td>
-            									College Graduate
+                              Mexican food
             								</td>
             							</tr>
                                         <tr>
                         					<td>
-            									Job
+                              Action movies
             								</td>
             								<td>
-            									Information Technology
+                              Hangliding
             								</td>
             							</tr>
                                         <tr>
                         					<td>
-            									Language
+
             								</td>
             								<td>
-                              English
+
 
             								</td>
             							</tr>
