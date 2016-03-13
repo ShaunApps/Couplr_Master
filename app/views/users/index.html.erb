@@ -12,14 +12,14 @@
                <div class="search-bar">
                   <%= form_tag(action: "filter", method: "post") do %>
                   <%= label_tag(:min, "Partner one's age is between", :class => "styling-partner-one-age") %>
-                  <%= number_field_tag(:min) %>
+                  <%= select_tag(:min, options_for_select(18..99), :class => "age-selection") %>
                   <%= label_tag(:max, "and", :class => "styling-partner-one-age") %>
-                  <%= number_field_tag(:max) %>
+                  <%= select_tag(:max, options_for_select(18..99, 99), :class => "age-selection") %>
                   <br>
                   <%= label_tag(:min_two, "Partner two's age is between", :class => "styling-partner-one-age") %>
-                  <%= number_field_tag(:min_two) %>
+                  <%= select_tag(:min_two, options_for_select(18..99), :class => "age-selection") %>
                   <%= label_tag(:max_two, "and", :class => "styling-partner-one-age") %>
-                  <%= number_field_tag(:max_two) %> <br>
+                  <%= select_tag(:max_two, options_for_select(18..99, 99), :class => "age-selection") %> <br>
                   <%= submit_tag("Filter", :class => "search-filter") %>
                   <% end %>
                </div>
@@ -31,11 +31,9 @@
                   <div class="col-md-4 portfolio-item">
                      <!-- class="img-responsive" -->
                      <ul>
-                        <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "270x210"), user_path(user)%></li>
-                        <li style="display:inline;"><%= link_to user.username, user_path(user) %></li>
-                        <li style="display:inline;">
-                           <p><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></p>
-                        </li>
+                        <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "280x220"), user_path(user)%></li>
+                        <li style="display:inline;"><%= link_to user.username, user_path(user), :class => "username-text" %></li>
+                        <li style="display:inline;"><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></li>
                      </ul>
                      <br>
                   </div>
