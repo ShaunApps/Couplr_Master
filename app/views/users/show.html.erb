@@ -1,199 +1,11 @@
 
-
-         <div class="container">
-
-           <div class="row">
-             <div class="col-md-12 col-sm-6 col-xs-12" >
-               <div class="panel panel-default">
-                 <div class="panel-heading clearfix", id="profileheading">
-                   <i class="icon-calendar"></i>
-                   <h3 class="panel-title", style="">Profile</h3>
-                 </div>
-                 <div class="panel-body">
-
-             <div class="row">
-         		<div class="col-md-4 column">
-         			<!-- <img class="img-thumbnail" alt="140x140" src="http://lorempixel.com/140/140/" /> -->
-              <%= image_tag(@user.avatar_url, size: "225x200") if @user.avatar?%>
-
-         		</div>
-         		<div class="col-md-8 column">
-
-         				<h4 id="usernamedisplay">
-         					<%= @user.username %>
-         				</h4>
-                <p>Couples: <%= @user.partner_one_name %> and <%=@user.partner_two_name %></p><br>
-                <ul class="profile-summary", id="initialsummary">
-                  <li><%= @user.age_one %></li>
-                  <li> <%= @user.age_two %></li>
-                  <li><%=@user.relationship_status%></li>
-                  <li><%#= @user.city %>Boca</li>
-                  <li> <%#=@user.state %>FL</li>
-                </ul>
-
-         		</div>
-         		<div class="col-md-2 column">
-
-               <% if current_user != @user %>
-               <input type="button" id="btnShowModal" value="Message" class="btn btn-default btn-block">
-               <% end %>
-
-                          <!-- <button class="btn btn-default btn-block" type="button">
-                             Report User
-                          </button>
-                          <button class="btn btn-default btn-block" type="button">
-                             Edit Profile
-                          </button> -->
-
-
-         		</div>
-         	</div>
-
-
-</div>
-<br>
-
-
-
-
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="tabbable" id="tabs-444468">
-				<ul class="nav nav-tabs">
-					<li class="active">
-						<a href="#" data-toggle="tab">About</a>
-					</li>
-					<li>
-						<a href="#" data-toggle="tab">Photos</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="panel-200304">
-						 <div class="row clearfix">
-                			<div class="col-md-8 column">
-                        <div class="col-md-8 column"
-            					<br>
-
-                                  <p id="aboutus"><br>
-                                  <%= @user.about_us %>
-            					</p>
-                                <hr/>
-                              </div>
-
-            				</div>
-            				<div class="col-md-4 column">
-            					<table class="table" id="usershowdetailbox">
-            						<thead>
-            							<tr>
-            								<th>
-            									Details
-            								</th>
-            							</tr>
-            						</thead>
-            						<tbody>
-            							<tr>
-            								<td>
-            									Last Online
-            								</td>
-            								<td>
-            									1 hour ago
-            								</td>
-            							</tr>
-                                        <tr>
-                							<td>
-            									Has kids?
-            								</td>
-            								<td>
-            									No
-            								</td>
-            							</tr>
-
-                                        <tr>
-                        					<td>
-            									Smoke
-            								</td>
-            								<td>
-            									No
-            								</td>
-            							</tr>
-                                        <tr>
-                        					<td>
-            									Drink
-            								</td>
-            								<td>
-            									Occasionally
-            								</td>
-            							</tr>
-                                        <tr>
-                        					<td>
-            									Interests:
-            								</td>
-            								<td>
-
-            								</td>
-            							</tr>
-            							<tr>
-                        					<td>
-                              Dogs
-            								</td>
-            								<td>
-                              Dancing
-            								</td>
-            							</tr>
-                                        <tr>
-                        					<td>
-                              Coffee
-            								</td>
-            								<td>
-                              Mexican food
-            								</td>
-            							</tr>
-                                        <tr>
-                        					<td>
-                              Action movies
-            								</td>
-            								<td>
-                              Hangliding
-            								</td>
-            							</tr>
-                                        <tr>
-                        					<td>
-
-            								</td>
-            								<td>
-
-
-            								</td>
-            							</tr>
-            						</tbody>
-            					</table>
-            				</div>
-            			</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
-
 <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
 
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title"><%= @user.username %></h3>
+              <h4 class="panel-title"><%= @user.username %></h4>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -221,11 +33,11 @@
                         <td><%= @user.partner_one_name %> and <%=@user.partner_two_name %></td>
                       </tr>
                       <tr>
-                        <td>Partner One Age:</td>
+                        <td><%= @user.partner_one_name %>'s Age:</td>
                         <td><%= @user.age_one %></td>
                       </tr>
                       <tr>
-                        <td>Partner Two Age:</td>
+                        <td><%=@user.partner_two_name %>'s Age:</td>
                         <td><%= @user.age_two %></td>
                       </tr>
 
@@ -239,9 +51,19 @@
                         <td>Florida</td>
                       </tr>
 
-                        <td>About Us:</td>
-                        <td><%= @user.about_us %>
+                        <td>Relationship Status:</td>
+                        <td><%= @user.relationship_status %>
                         </td>
+
+                        <tr>
+                        <td>Have kids?</td>
+                        <% if @user.have_kids %>
+                        <td>Yes</td>
+                        <% else %>
+                        <td>No</td>
+                        <% end %>
+
+                      </tr>
 
                       </tr>
 
@@ -250,53 +72,48 @@
 
 
 
-                  <a class="btn btn-primary" type="button" id="btnShowModal" value="Message">Message</a>
-                  <% if current_user != @user %>
-                  <input type="button" id="btnShowModal" value="Message" class="btn btn-default btn-block">
-                  <% end %>
-
-
-
-
                 </div>
+
+                <% if current_user != @user %>
+                <a class="btn btn-primary" type="button" id="btnShowModal" value="Message">Message</a>
+                <!-- <input type="button" id="btnShowModal" value="" class="btn btn-default btn-block"> -->
+                <% end %>
+              </div>
+
+              <div class="row">
+
               </div>
 
 
 
               <div class="row">
                 <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
-                  <%= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                  <%#= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                  <!-- this is second image on page -->
                 </div>
 
-                <div class="row">
-                  <table class="table table-user-information">
+                <div class="col-md-8 col-lg-8">
+                  <table class="table table-user-information" width="100">
                     <tbody>
 
-                    </tr>
+
 
                       <td>About Us:</td>
-                      <td><%= @user.about_us %>
-                      </td>
-
+                    <tr>
+                      <td id="aboutussummary"><%= @user.about_us %></td>
                     </tr>
-
-
 
                     </tbody>
                   </table>
                 </div>
-
-
-
-
             </div>
-                 <div class="panel-footer">
+                 <!-- <div class="panel-footer">
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
                             <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                             <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
-                    </div>
+                    </div> -->
 
           </div>
         </div>
