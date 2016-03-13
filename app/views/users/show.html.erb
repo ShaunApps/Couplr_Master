@@ -54,49 +54,7 @@
 <br>
 
 
-<div id="output"></div>
 
-<div id="overlay" class="web_dialog_overlay"></div>
-
-<div id="dialog" class="web_dialog">
-
-  <!-- <h1>Do not uncomment the close button below for now, it is messing up the send a message button</h1> -->
-   <!-- <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
-      <tr>
-
-         <td class="web_dialog_title align_right">
-            <a href="#" id="btnClose">Close</a>
-         </td>
-      </tr>
-      <br> -->
-
-
-      <%= form_for :conversation, url: :message, html: { class: "" } do |f| %>
-         <div class="form-group">
-           <%= f.label :recipients, "Recipient: #{@user.username}" %>
-           <%= f.hidden_field :user_id, :value => @user.id %>
-         </div>
-         <div class="form-group">
-           <%= f.label :subject %>
-           <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
-         </div>
-         <div class="form-group">
-           <%= f.label :message %>
-           <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
-         </div>
-         <div id="btnSubmit">
-           <%= f.submit "Send Message", class: "btn btn-success" %>
-         </div>
-
-      <% end %>
-
-
-         <!-- <td colspan="2" style="text-align: center;">
-            <input id="btnSubmit" type="button" value="Submit" />
-         </td> -->
-      <!-- </tr>
-   </table> -->
-</div>
 
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -220,4 +178,182 @@
 </div>
 </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= @user.username %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
+                  <%= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                </div>
+
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-8 col-lg-8 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Couple Name:</td>
+                        <td><%= @user.partner_one_name %> and <%=@user.partner_two_name %></td>
+                      </tr>
+                      <tr>
+                        <td>Partner One Age:</td>
+                        <td><%= @user.age_one %></td>
+                      </tr>
+                      <tr>
+                        <td>Partner Two Age:</td>
+                        <td><%= @user.age_two %></td>
+                      </tr>
+
+                         <tr>
+                             <tr>
+                        <td>City:</td>
+                        <td>Boca</td>
+                      </tr>
+                        <tr>
+                        <td>State:</td>
+                        <td>Florida</td>
+                      </tr>
+
+                        <td>About Us:</td>
+                        <td><%= @user.about_us %>
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+
+
+                  <a class="btn btn-primary" type="button" id="btnShowModal" value="Message">Message</a>
+                  <% if current_user != @user %>
+                  <input type="button" id="btnShowModal" value="Message" class="btn btn-default btn-block">
+                  <% end %>
+
+
+
+
+                </div>
+              </div>
+
+
+
+              <div class="row">
+                <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
+                  <%= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                </div>
+
+                <div class="row">
+                  <table class="table table-user-information">
+                    <tbody>
+
+                    </tr>
+
+                      <td>About Us:</td>
+                      <td><%= @user.about_us %>
+                      </td>
+
+                    </tr>
+
+
+
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+
+            </div>
+                 <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                        </span>
+                    </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="output"></div>
+
+<div id="overlay" class="web_dialog_overlay"></div>
+
+<div id="dialog" class="web_dialog">
+
+  <!-- <h1>Do not uncomment the close button below for now, it is messing up the send a message button</h1> -->
+   <!-- <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
+      <tr>
+
+         <td class="web_dialog_title align_right">
+            <a href="#" id="btnClose">Close</a>
+         </td>
+      </tr>
+      <br> -->
+
+
+      <%= form_for :conversation, url: :message, html: { class: "" } do |f| %>
+         <div class="form-group">
+           <%= f.label :recipients, "Recipient: #{@user.username}" %>
+           <%= f.hidden_field :user_id, :value => @user.id %>
+         </div>
+         <div class="form-group">
+           <%= f.label :subject %>
+           <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+         </div>
+         <div class="form-group">
+           <%= f.label :message %>
+           <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+         </div>
+         <div id="btnSubmit">
+           <%= f.submit "Send Message", class: "btn btn-success" %>
+         </div>
+
+      <% end %>
+
+
+         <!-- <td colspan="2" style="text-align: center;">
+            <input id="btnSubmit" type="button" value="Submit" />
+         </td> -->
+      <!-- </tr>
+   </table> -->
 </div>
