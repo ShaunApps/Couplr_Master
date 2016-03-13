@@ -282,6 +282,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+// .form-group label {
+//   width: 100%;
+// }
+
 .right-reg {
     margin-left: 25px;
 }
@@ -337,7 +341,6 @@ body {
   background: #FFC0E6;
 }
 
-
 #aboutus {
   font-size: 200%;
   font-family: "Times New Roman", Times, serif;
@@ -355,6 +358,31 @@ body {
 }
 
 #aboutussummary {
+  font-style: oblique;
+}
 
-  font-style: oblique;;
+#browse-suggestions {
+  margin-top: 0;
+  background-color: #4E332D;
+}
+
+.styling-partner-one-age {
+  font-size: 1.35em;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.search-filter {
+  font-size: 1.4em;
+}
+
+.age-selection {
+  font-size: 1.3em;
+}
+
+.username-text {
+  font-size: 1.25em;
+  display: block;
+  margin-left: 25px;
+  margin-right: auto;
 }
