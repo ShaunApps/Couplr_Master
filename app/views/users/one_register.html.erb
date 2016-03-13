@@ -1,124 +1,9 @@
-
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand topnav" href="">couplr</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                <% if user_signed_in? %>
-
-                    <li><%= link_to "Hello, #{current_user.username}", "#" %></li>
-                    <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-                    <li><%= link_to "Logout", logout_path %></li>
-                <% else %>
-                    <li class="active"><%= link_to "Login", login_path %></li>
-                    <li><%= link_to "Sign up", signup_path %></li>
-                <% end %>
-              </ul>
-            </div></.nav-collapse
-          </div>
-         </nav>
-         <!-- <div class="intro-header"> -->
+<%= render 'layouts/nav' %>
 
          <div class="container">
 <body>
 
-           <!-- Row start -->
-           <!-- <div class="row">
-             <div class="col-md-12 col-sm-6 col-xs-12">
-               <div class="panel panel-default">
-                 <div class="panel-heading clearfix">
-                   <i class="icon-calendar"></i>
-                   <h3 class="panel-title">Inputs</h3>
-                 </div>
 
-                 <div class="panel-body">
-                   <form class="form-horizontal row-border" action="#">
-                     <div class="form-group">
-                       <label class="col-md-2 control-label"></label>
-                       <div class="col-xs-4">
-                         <input type="text" name="regular" class="form-control">
-                       </div>
-                     </div>
-
-                     <div class="form-group">
-                       <label class="col-md-2 control-label">With placeholder</label>
-                       <div class="col-xs-4">
-                         <input class="form-control" type="text" name="placeholder" placeholder="placeholder">
-                       </div>
-                     </div>
-                     <div class="form-group">
-                       <label class="col-md-2 control-label">With placeholder</label>
-                       <div class="col-xs-4">
-                         <input class="form-control" type="text" name="placeholder" placeholder="placeholder">
-                       </div>
-                     </div>
-                     <div class="form-group">
-                       <label class="col-md-2 control-label">With placeholder</label>
-                       <div class="col-xs-4">
-                         <input class="form-control" type="text" name="placeholder" placeholder="placeholder">
-                       </div>
-                     </div>
-                     <div class="form-group">
-                       <label class="col-md-2 control-label">With placeholder</label>
-                       <div class="col-xs-4">
-                         <input class="form-control" type="text" name="placeholder" placeholder="placeholder">
-                       </div>
-                     </div>
-                     <div class="form-group">
-                       <label class="col-md-2 control-label">With placeholder</label>
-                       <div class="col-xs-4">
-                         <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
-                       </div>
-                     </div>
-                     <div class="panel-body">
-                       <div class="row">
-                         <div class="col-md-3 col-sm-3">
-                           <div class="input-group">
-                             <span class="input-group-addon">
-                               <input type="checkbox">
-                             </span>
-                             <input type="text" class="form-control">
-                           </div>
-                         </div>
-
-
-
-      <div class="form-group">
-      <label class="col-md-2 control-label">Date of Birth</label>
-      <div class="col-xs-4">
-      <input type="date" class="form-control" id="exampleInputDOB1" placeholder="Date of Birth">
-    </div>
-</div>
-
- -->
-
-                     <!-- <div class="form-group">
-                       <label class="col-md-2 control-label">Predefined value</label>
-                       <div class="col-xs-4">
-                         <input type="text" name="regular" value="http://" class="form-control">
-                       </div>
-                     </div> -->
-<!--
-
-                     </div>
-                   </form>
-                 </div>
-               </div>
-             </div>
-           </div> -->
-           <!-- Row end -->
-<!--
-         </div> -->
 
 <h4>Start making friends by adding to your profile.</h4>
 
@@ -134,8 +19,6 @@
 
 <%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border"} do |f| %>
 
-
-<%#= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <%= form_for @user, method: :patch do |f| %>
 
 <% if @user.errors.any? %>
@@ -149,39 +32,6 @@
 </div>
 <% end %>
 
-<!-- We might want to make these f.select fields, but we'll do that when we have time -->
-<!-- We can add terms and services and captcha if we have time -->
-<!--
-<div class="form-group">
-  <%= f.label :partner_two_birth_month, "Partner 1 Birthday Month", class: "col-md-2 control-label" %>
-  <%= f.date_field :ponebmonth %>
-</div>
-
-<div class="form-group">
-  <%= f.label :partner_one_birth_day, class: "col-md-2 control-label" %>
-  <%= f.number_field :ponebday %>
-</div>
-
-<div class="form-group">
-  <%= f.label :partner_one_birth_year, class: "col-md-2 control-label" %>
-  <%= f.number_field :ponebyear %>
-</div>
-
-<div class="form-group">
-  <%= f.label :partner_two_birth_month, class: "col-md-2 control-label" %>
-  <%= f.number_field :ptwobmonth %>
-</div>
-
-<div class="form-group">
-  <%= f.label :partner_two_birth_day, class: "col-md-2 control-label" %>
-  <%= f.number_field :ptwobday %>
-</div>
-
-<div class="form-group">
-  <%= f.label :partner_two_birth_year, class: "col-md-2 control-label" %>
-  <%= f.number_field :ptwobyear %>
-</div> -->
-
 <div class="form-group">
   <%= f.label :partner_one_birthday, class: "col-md-4 control-label"  %>
   <%= f.date_field :birthday_one %>
@@ -191,36 +41,6 @@
   <%= f.label :partner_two_birthday, class: "col-md-4 control-label" %>
   <%= f.date_field :birthday_two %>
 </div>
-<!--
-<div class="form-group">
-  <%#= f.label :partner_one_birth_month %>
-  <%#= f.number_field :ponebmonth %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_one_birth_day %>
-  <%#= f.number_field :ponebday %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_one_birth_year %>
-  <%#= f.number_field :ponebyear %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_month %>
-  <%#= f.number_field :ptwobmonth %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_day %>
-  <%#= f.number_field :ptwobday %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_year %>
-  <%#= f.number_field :ptwobyear %>
-</div> -->
 
 <div class="form-group">
   <%= f.label :relationship_status, class: "col-md-4 control-label" %>

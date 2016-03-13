@@ -16,3 +16,4 @@
 //= require chosen-jquery
 //= require turbolinks
 //= require_tree .
+//= require conversations
