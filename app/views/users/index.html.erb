@@ -57,11 +57,11 @@
                <div class="row">
                  <% @users.each do |user| %>
                   <div class="col-md-4 portfolio-item">
-
+ <!-- class="img-responsive" -->
                        <ul>
-                         <li style="display:inline;"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></li>
+                         <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "270x210"), user_path(user)%></li>
                          <li style="display:inline;"><%= link_to user.username, user_path(user) %></li>
-                         <li style="display:inline;"><p>Profile Info</p></li>
+                         <li style="display:inline;"><p><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></p></li>
                        </ul>
                         <br>
 
