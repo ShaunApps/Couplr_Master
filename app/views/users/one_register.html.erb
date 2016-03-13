@@ -1,5 +1,4 @@
 <h1>Register page</h1>
-<%#= form_for @user, url: user_path(@user), method: :patch do |f| %>
 <%= form_for @user, method: :patch do |f| %>
 <% if @user.errors.any? %>
 <div class="error_messages">
@@ -12,9 +11,6 @@
 </div>
 <% end %>
 
-<!-- We might want to make these f.select fields, but we'll do that when we have time -->
-<!-- We can add terms and services and captcha if we have time -->
-
 <div class="form-group">
   <%= f.label :partner_one_birthday %>
   <%= f.date_field :birthday_one %>
@@ -24,36 +20,6 @@
   <%= f.label :partner_two_birthday %>
   <%= f.date_field :birthday_two %>
 </div>
-<!--
-<div class="form-group">
-  <%#= f.label :partner_one_birth_month %>
-  <%#= f.number_field :ponebmonth %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_one_birth_day %>
-  <%#= f.number_field :ponebday %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_one_birth_year %>
-  <%#= f.number_field :ponebyear %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_month %>
-  <%#= f.number_field :ptwobmonth %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_day %>
-  <%#= f.number_field :ptwobday %>
-</div>
-
-<div class="form-group">
-  <%#= f.label :partner_two_birth_year %>
-  <%#= f.number_field :ptwobyear %>
-</div> -->
 
 <div class="form-group">
   <%= f.label :relationship_status %>
