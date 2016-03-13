@@ -1,8 +1,6 @@
-
-<center>
+<!-- <center>
    <div class="intro-header">
-
-</center>
+</center> -->
 <!-- Page Content -->
 <div class="container">
    <div class="row">
@@ -10,105 +8,44 @@
          <div class="panel panel-default">
             <div class="panel-heading clearfix">
                <i class="icon-calendar"></i>
-               <h3 class="panel-title">Browse Suggestions</h3>
+               <h1 id="browse-suggestions">Browse Suggestions</h1>
                <div class="search-bar">
                   <%= form_tag(action: "filter", method: "post") do %>
-                  <%= label_tag(:min, "Partner one's age is between") %>
+                  <%= label_tag(:min, "Partner one's age is between", :class => "styling-partner-one-age") %>
                   <%= number_field_tag(:min) %>
-                  <%= label_tag(:max, "and") %>
+                  <%= label_tag(:max, "and", :class => "styling-partner-one-age") %>
                   <%= number_field_tag(:max) %>
                   <br>
-                  <%= label_tag(:min_two, "Partner two's age is between") %>
+                  <%= label_tag(:min_two, "Partner two's age is between", :class => "styling-partner-one-age") %>
                   <%= number_field_tag(:min_two) %>
-                  <%= label_tag(:max_two, "and") %>
-                  <%= number_field_tag(:max_two) %>
-                  <%= submit_tag("Search") %>
+                  <%= label_tag(:max_two, "and", :class => "styling-partner-one-age") %>
+                  <%= number_field_tag(:max_two) %> <br>
+                  <%= submit_tag("Filter", :class => "search-filter") %>
                   <% end %>
                </div>
             </div>
+
             <div class="panel-body">
-
                <div class="row">
-                 <% @users.each do |user| %>
+                  <% @users.each do |user| %>
                   <div class="col-md-4 portfolio-item">
- <!-- class="img-responsive" -->
-                       <ul>
-                         <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "270x210"), user_path(user)%></li>
-                         <li style="display:inline;"><%= link_to user.username, user_path(user) %></li>
-                         <li style="display:inline;"><p><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></p></li>
-                       </ul>
-                        <br>
-
+                     <!-- class="img-responsive" -->
+                     <ul>
+                        <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "270x210"), user_path(user)%></li>
+                        <li style="display:inline;"><%= link_to user.username, user_path(user) %></li>
+                        <li style="display:inline;">
+                           <p><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></p>
+                        </li>
+                     </ul>
+                     <br>
                   </div>
-                 <% end %>
+                  <% end %>
                </div>
 
-               <!-- /.row -->
-               <!-- Projects Row -->
-               <!-- <div class="row">
-                  <div class="col-md-4 portfolio-item">
-                      <a href="#">
-                          <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                      </a>
-                      <h3>
-                          <a href="#">User</a>
-                      </h3>
-                      <p>Profile Info</p>
-                  </div>
-                  <div class="col-md-4 portfolio-item">
-                      <a href="#">
-                          <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                      </a>
-                      <h3>
-                          <a href="#">User</a>
-                      </h3>
-                      <p>Profile Info</p>
-                  </div>
-                  <div class="col-md-4 portfolio-item">
-                      <a href="#">
-                          <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                      </a>
-                      <h3>
-                          <a href="#">User</a>
-                      </h3>
-                      <p>Profile Info</p>
-                  </div>
-                  </div> -->
-
-               <!-- Pagination -->
-               <!-- <div class="row text-center">
-                  <div class="col-lg-12">
-                      <ul class="pagination">
-                          <li>
-                              <a href="#">&laquo;</a>
-                          </li>
-                          <li class="active">
-                              <a href="#">1</a>
-                          </li>
-                          <li>
-                              <a href="#">2</a>
-                          </li>
-                          <li>
-                              <a href="#">3</a>
-                          </li>
-                          <li>
-                              <a href="#">4</a>
-                          </li>
-                          <li>
-                              <a href="#">5</a>
-                          </li>
-                          <li>
-                              <a href="#">&raquo;</a>
-                          </li>
-                      </ul>
-                  </div>
-                  </div> -->
-               <!-- /.row -->
-               <!-- <hr> -->
             </div>
          </div>
       </div>
    </div>
- </div>
+</div>
 </body>
 </html>
