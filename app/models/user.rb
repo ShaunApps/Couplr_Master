@@ -83,7 +83,21 @@ class User < ActiveRecord::Base
  end
 
 
+def self.get_distance(current_user)
+  array_of_distances =[]
+  self.all.each do |user|
+    distance = Geocoder::Calculations.distance_between([current_user.lat, current_user.lng], [user.lat, user.lng])
+    user_distance = [user, distance]
+    array_of_distances << user_distance
+  end
+  return array_of_distances
 
+end
+
+def self.user_distance(current_user, distance_in_miles)
+  users_within_distance = get_distance(current_user).select {|userdistance| userdistance.last < distance_in_miles}
+  users_within_distance.map{ |user| user[0] }
+end
 
 
 

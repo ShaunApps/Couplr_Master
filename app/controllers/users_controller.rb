@@ -14,28 +14,15 @@ class UsersController < ApplicationController
      array_a = []
      array_b = []
      array_a = User.filtered_by_age_one(params[:min], params[:max])#.filtered_by_age_two(params[:min_two], params[:max_two])
-  puts "-"*50
-     p array_a
-  puts "-"*50
 
-  #    array_b = User.filtered_by_age_two(params[:min_two], params[:max_two])
-  # puts "$"*50
-  #    p array_b
-  # puts "$"*50
+     User.user_distance(current_user, params[:distance_in_miles].to_f)
 
-    #  @array.flatten!
-    # dup = array.select{|element| array.count(element) > 1 }
-    # dup.uniq!
-      puts "*"*50
-      p array_c = array_a + array_b
-      puts "*"*50
-
-  puts "/"*50
-    @users = User.filtered_by_age_one(params[:min], params[:max]).filtered_by_age_two(params[:min_two], params[:max_two])
-    p @users
-  puts "/"*50
-    #p filtered_users
-    render "index"
+     puts "/"*50
+     @users = User.filtered_by_age_one(params[:min], params[:max]).filtered_by_age_two(params[:min_two], params[:max_two]).user_distance(current_user, params[:distance_in_miles].to_f)
+     p @users
+     puts "/"*50
+     #p filtered_users
+     render "index"
   end
 
   def new
@@ -65,6 +52,17 @@ class UsersController < ApplicationController
   # end
 
   def update
+
+  if @user.lat == nil
+   address = "#{params[:user][:street_number]}%20#{params[:user][:street]}%20#{params[:user][:city]}%20#{params[:user][:state]}%20#{params[:user][:country_location]}%20#{params[:user][:zip_code]}"
+   url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key=AIzaSyDZREAL41XlqYECcPJAriMQi5ak8wUEEVo"
+
+   response = HTTParty.get(url)
+
+
+   @user.lat = response['results'][0]['geometry']['location']['lat']
+   @user.lng = response['results'][0]['geometry']['location']['lng']
+  end
 
     #now = Time.now.utc
     #p "hi thereeeee"
