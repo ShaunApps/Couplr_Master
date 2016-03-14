@@ -11,14 +11,14 @@ class UsersController < ApplicationController
   end
 
   def filter
-     array_a = []
-     array_b = []
-     array_a = User.filtered_by_age_one(params[:min], params[:max])#.filtered_by_age_two(params[:min_two], params[:max_two])
-
-     User.user_distance(current_user, params[:distance_in_miles].to_f)
+    #  array_a = []
+    #  array_b = []
+    #  array_a = User.filtered_by_age_one(params[:min], params[:max])#.filtered_by_age_two(params[:min_two], params[:max_two])
+     #
+    #  User.user_distance(current_user, params[:distance_in_miles].to_f)
 
      puts "/"*50
-     @users = User.filtered_by_age_one(params[:min], params[:max]).filtered_by_age_two(params[:min_two], params[:max_two]).user_distance(current_user, params[:distance_in_miles].to_f)
+     @users = User.filtered_by_age(params[:min], params[:max], params[:min_two], params[:max_two]).user_distance(current_user, params[:distance_in_miles].to_f)
      p @users
      puts "/"*50
      #p filtered_users

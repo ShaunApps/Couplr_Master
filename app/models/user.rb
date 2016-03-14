@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   has_secure_password
   has_many :images
-  scope :filtered_by_age_one, -> (min, max) {where ("(age_one >= #{min} AND age_one <= #{max})")}
-  scope :filtered_by_age_two, -> (min, max) {where ("(age_two >= #{min} AND age_two <= #{max})")}
+  # scope :filtered_by_age_one, -> (min, max) {where ("(age_one >= #{min} AND age_one <= #{max})")}
+  # scope :filtered_by_age_two, -> (min, max) {where ("(age_two >= #{min} AND age_two <= #{max})")}
   validates :partner_one_name, length: {minimum: 2, maximum: 20}, allow_blank: false
   validates :partner_two_name, length: {minimum: 2, maximum: 20}, allow_blank: false
   validates :username, length: {minimum: 2, maximum: 20}, allow_blank: false
@@ -15,6 +15,19 @@ class User < ActiveRecord::Base
   validates_presence_of :birthday_one, :on => [:update], allow_nil: false
   validates_presence_of :birthday_two, :on => [:update], allow_nil: false
 
+  def self.filtered_by_age(min1, max1, min2, max2)
+    users = Arel::Table.new(:users)
+    age_one_one_query = users[:age_one].gteq(min1).and(users[:age_one].lteq(max1))
+    age_two_two_query = users[:age_two].gteq(min2).and(users[:age_two].lteq(max2))
+    pair1_query = age_one_one_query.and(age_two_two_query)
+
+    age_one_two_query = users[:age_one].gteq(min2).and(users[:age_one].lteq(max2))
+    age_two_one_query = users[:age_two].gteq(min1).and(users[:age_two].lteq(max1))
+    pair2_query = age_one_two_query.and(age_two_one_query)
+
+    users = User.find_by_sql(users.where(pair1_query.or(pair2_query)).project(Arel.sql('id')).to_sql)
+    User.where(id: users.map(&:id))
+  end
 
 
   acts_as_messageable
