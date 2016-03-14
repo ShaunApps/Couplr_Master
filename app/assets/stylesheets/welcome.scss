@@ -15,8 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-    // font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Quicksand', 'sans-serif' !important;
     font-weight: 700;
 }
 
@@ -198,14 +197,15 @@ h6 {
 }
 
 .owl-pagination {
-    background-color: #ccc;
+    background-color: #Fff;
 }
 .owl-buttons {
-    background-color: #ccc;
+    background-color: #Fff;
 }
 
 section#services {
-    background-color: #ccc;
+    background-color: #F0F0F0;
+    width: 100%;
 }
 
 footer {
@@ -216,4 +216,38 @@ footer {
 
 p.copyright {
     margin: 15px 0 0;
+}
+img.img-responsive {
+    margin-bottom: 30px;
+}
+
+.container {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+}
+
+.container.features {
+  background-color: #fff;
+  border: 1px white;
+}
+.section-heading {
+    margin-bottom: 30px;
+    color: #fff !important;
+}
+.col-lg-12.text-center {
+    background-color: #00C4CC;
+    color: #fff !important;
+}
+
+h3.section-subheading.text-muted {
+    color: #fff;
+}
+.row.text-center {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 40px;
 }
