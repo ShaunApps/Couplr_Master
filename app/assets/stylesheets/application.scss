@@ -5,6 +5,8 @@
 @import 'sessions';
 @import 'bootstrap';
 @import 'bootstrap/theme';
+@import 'owl.carousel';
+@import 'owl.theme';
 
 * {
   box-sizing: border-box;
@@ -26,7 +28,7 @@ input {
     $dark-gray: #333 !default;
     $large-screen: em(860) !default;
     $navigation-padding: 1em;
-    $navigation-background: #3D221C;
+    $navigation-background: #d7d7d7;
     $navigation-color: transparentize(white, 0.3);
     $navigation-color-hover: white;
     $navigation-height: 65px;

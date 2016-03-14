@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 //= require conversations
+//= require owl.carousel
 $(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
@@ -30,3 +31,5 @@ $(document).ready(function() {
     });
   });
 });
+
+// $(".owl-carousel").owlCarousel();
