@@ -4,15 +4,16 @@
 <center>
 <!-- Header -->
 <!-- <div class="container"> -->
-  <div class="intro-header">
-    <div class="row">
-      <!-- <div id="login-btn" class="col-md-2 col-md-offset-10">
-        <%= link_to login_path do %>
+  <!-- <div class="intro-header"> -->
+    <!-- <div class="row"> -->
+      <!-- <div class="col-md-2 col-md-offset-12"> -->
+        <!-- <%= link_to login_path do %>
         <div class="btn btn-default btn-lg">
           Log In
         </div>
         <% end %> -->
-      </div>
+      <!-- </div> -->
+
 
 <%= form_for @user do |f| %>
 <% if @user.errors.any? %>
@@ -26,56 +27,58 @@
 </div>
 <% end %>
 
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row">
-        <div class="row-signup">
+        <div class="row-signup"> -->
 
-
+<!-- <div class = "SignUp">
 <form class="form-horizontal">
-  <div id="signin-grp" class="col-sm-3 col-sm-offset-3 left-reg">
-    <div class="form-group">
+  <div id="signin-grp">
+    <div class="form-group"> -->
+<h1>Register Form</h1>
 
-  <%= f.label :username %>
-  <%= f.text_field :username, :placeholder => "placeholder text"%>
+<div class="reg">
+
+<div class="SignUpForm">
+
+<div class="form-group">
+  <!-- <%= f.label :partner_one_name %> -->
+  <%= f.text_field :partner_one_name, :placeholder => "Partner One Name" %>
 </div>
 
 <div class="form-group">
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <!-- <%= f.label :partner_two_name %> -->
+  <%= f.text_field :partner_two_name, :placeholder => "Partner Two Name" %>
+</div>
+
+
+<div class="form-group">
+  <!-- <%= f.label :shared_email %> -->
+  <%= f.text_field :email, :placeholder => "Shared Email" %>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_one_name, "Partner 1" %>
-  <%= f.text_field :partner_one_name %>
-</div>
-</div>
-
-  <div id="signin-grp" class="col-sm-3 right-reg">
-  <div class="form-group">
-    <%= f.label :shared_email, "Shared Email" %>
-    <%= f.text_field :email %>
-  </div>
-
-<div class="form-group">
-  <%= f.label :password_confirmation, "Confirm Password" %>
-  <%= f.password_field :password_confirmation %>
+<!-- <%= f.label :username %> -->
+<%= f.text_field :username, :placeholder => "Shared Username"%>
 </div>
 
 <div class="form-group">
-  <%= f.label :partner_two_name, "Partner 2" %>
-  <%= f.text_field :partner_two_name %>
+<!-- <%= f.label :password %> -->
+<%= f.password_field :password, :placeholder => "Password" %>
+</div>
+
+<div class="form-group">
+  <!-- <%= f.label :password_confirmation, "Confirm Password" %> -->
+  <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 </div>
 </div>
-</div>
-</div>
+
 
 
 <div class="create-account-btn">
   <!-- <a href="users" class="btn btn-default btn-lg"><span class="network-name">Create Account</span></a> -->
   <%= f.submit "Create Account", id: "create-acct-btn", class: "btn btn-default btn-lg" %>
 
-</div>
-</div>
 </div>
 </div>
 

@@ -46,7 +46,7 @@ h6 {
 }
 
 #signin-grp {
-  padding-top: 173px;
+
 }
 
 #usershowprofile {
@@ -186,7 +186,7 @@ intro-message > h1 {
 
 footer {
     padding: 50px 0;
-    background-color: #3D221C;
+    background-color: #3F4652;
     color: #fff;
 }
 
@@ -295,6 +295,7 @@ body {
 
 .btn-default.btn-lg {
   font-family: 'Josefin Sans',sans-serif !important;
+
     font-size: 14px;
     line-height: 1.42857143;
     color: #000 !important;
@@ -390,6 +391,7 @@ body {
 }
 
 
+
 .index-form {
   background-color: #C09D7A;
 }
@@ -425,6 +427,67 @@ body {
 }
 
 .profilepic {
+}
 
+
+.reg {
+   width: 50%;
+  //  margin-left: 45%;
+   border-radius: 25px;
+   border: 2px solid #000;
+   padding: 20px;
+  //  height: 850px;
+   box-shadow: 10px 10px 5px #888888 ;
+}
+
+.reg-log {
+   width: 30%;
+  //  margin-left: 45%;
+   border-radius: 25px;
+   border: 2px solid #000;
+   padding: 20px;
+  //  height: 850px;
+   box-shadow: 10px 10px 5px #888888 ;
+   margin-bottom: 50px;
+}
+
+input#username {
+    padding: 10px;
+}
+input#password {
+    padding: 10px;
+}
+
+.SignUpForm {
+    margin-left: 35%;
+}
+
+.SignUpForm1 {
+    margin-left: 25%;
+}
+
+input#user_partner_two_name {
+    padding: 10px;
+}
+
+input#user_partner_one_name {
+    padding: 10px;
+  }
+
+  input#user_username {
+    padding: 10px;
+}
+input#user_email {
+  padding: 10px;
+}
+input#user_password {
+  padding: 10px;
+}
+input#user_password_confirmation {
+  padding: 10px;
+}
+
+form#new_user {
+    padding: 55px;
 
 }
