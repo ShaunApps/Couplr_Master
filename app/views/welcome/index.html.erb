@@ -3,22 +3,15 @@
 
 <center>
 
-         <div class="intro-header">
+         <!-- <div class="intro-header"> -->
 
-<!-- Header -->
-<div class="container">
-      <div id="signup-btn" class="col-md-2 col-md-offset-5">
-        <%= link_to signup_path do %>
-        <div class="btn btn-default btn-lg">
-          Sign Up
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+         <div id="slider" class="owl-carousel owl-theme">
 
-  <!-- /.container -->
+           <div class="item"><img src="http://i.imgur.com/4W6v5Sa.png?1" alt="The Last of us"></div>
+           <div class="item"><img src="http://i.imgur.com/73n4oZV.png" alt="GTA V"></div>
+           <div class="item"><img src="http://i.imgur.com/a0XYKkJ.png" alt="Mirror Edge"></div>
 
+         </div>
 
 
   <!-- Services Section -->
@@ -26,8 +19,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Signing Up Only Takes 2 Minutes</h2>
-          <h3 class="section-subheading text-muted">We make it easy to make friends! </h3>
+          <h2 class="section-heading">Signing up only takes 2 minutes</h2>
+          <h3 class="section-subheading text-muted">We make it easy to make friends with other couples!</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -54,11 +47,69 @@
           </span>
           <h4 class="service-heading">Make Friends!</h4>
           <p class="text-muted">Plan an activity or go try out that new restaurant that just opened. Sky is the limit!</p>
+
+          <%= link_to signup_path do %>
+          <div class="btn btn-default btn-lg">
+            Sign Up
+          </div>
+          <% end %>
+
+
+
+
         </div>
       </div>
     </div>
   </section>
 </div>
 </div>
-
 </div>
+<!-- Header -->
+
+
+
+<!-- <div class="container1"> -->
+
+  <!-- </div> -->
+
+  <!-- /.container -->
+
+
+
+<style>
+#slider .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+
+
+
+<!--  jQuery 1.7+  -->
+<script src="jquery-1.10.2.min.js"></script>
+
+<!-- Include js plugin -->
+<!-- <script src="assets/owl-carousel/owl.carousel.js"></script> -->
+<script src="assets/javascripts/owl-carousel/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function() {
+
+  $("#slider").owlCarousel({
+
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1,
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+  });
+
+});
+</script>

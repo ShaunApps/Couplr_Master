@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 //= require conversations
+//= require owl.carousel
 $(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
@@ -30,3 +31,12 @@ $(document).ready(function() {
     });
   });
 });
+
+// $(".owl-carousel").owlCarousel();
+
+$ ->
+  # enable chosen js
+  $('.chosen-select').chosen
+    allow_single_deselect: true
+    no_results_text: 'No results matched'
+    width: '200px'
