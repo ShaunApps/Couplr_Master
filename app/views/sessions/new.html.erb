@@ -27,17 +27,17 @@
   <!-- <div id="login-grp" class="col-md-2 col-md-offset-4"> -->
   <h1>Login</h1>
 
-  <div class="reg-log">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3" id="form-container">
+      <form role="form">
+         <div class="bs-example2">
 
-  <div class="SignUpForm1">
-
-  <div class="form-group">
 <%= form_tag sessions_path do %>
-  <div class="field">
+  <div class="form-group float-label-control">
   <%= label_tag :username %>
   <%= text_field_tag :username %>
   </div>
-<div class="field">
+<div class="form-group float-label-control">
   <%= label_tag :password %>
   <%= password_field_tag :password %>
 </div>

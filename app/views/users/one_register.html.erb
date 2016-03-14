@@ -1,25 +1,72 @@
 
+        <header class="navigation navbar-fixed-top" role="banner">
+          <div class="navigation-wrapper">
+            <a href="javascript:void(0)" class="logo">
+              <img src="http://i.imgur.com/UUnjhVY.png" alt="Logo Image">
+            </a>
+            <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+            <nav role="navigation">
+              <ul id="js-navigation-menu" class="navigation-menu show">
+                <% if user_signed_in? %>
 
-         <div class="container">
-<body>
+
+                <li class="nav-link"><%= link_to "Hi there, #{current_user.username}", user_path(current_user) %></li>
+                <li class="nav-link"><%= link_to "Inbox", mailbox_inbox_path %></li>
+                <li class="nav-link"><%= link_to "Logout", logout_path %></li>
+
+                <li class="nav-link more"><a href="javascript:void(0)">Edit Profile</a>
+                <ul class="submenu">
+                <li><%= link_to "Browse Suggestions", logout_path %></li>
+                <li><%= link_to "Upload Photo", logout_path %></li>
+                <li class="Interests"><%= link_to "Edit Profile", logout_path %>
+                <ul class="submenu">
+                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
+                <li><a href="javascript:void(0)">Another Item</a></li>
+                </ul>
+                </li>
+                <li class="more"><%= link_to "Interests", logout_path %>
+                <ul class="submenu">
+                <li><%= link_to "About Us", logout_path %></li>
+                <li><%= link_to "Details", logout_path %></li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+                <% else %>
+                  <li class="nav-link"><%= link_to "Login", login_path %></li>
+
+</nav>
+<% end %>
+</div>
+</div>
+</header>
 
 
 
-<h4>Start making friends by adding to your profile.</h4>
 
-<div class="row">
+
+
+
+
+
+
+
+<center>
+<h4>Start by adding to your profile. Use the navigation bar to skip to the next section.</h4>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3" id="form-container">
+<!-- <div class="row">
   <div class="col-md-8 col-sm-10 col-xs-12 col-sm-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <i class="icon-calendar"></i>
         <h3 class="panel-title">Profile</h3>
       </div>
-      <div class="panel-body">
+      <div class="panel-body"> -->
+   <div class="bs-example">
 
-
-<%= form_for @user, url: user_path(@user), method: :patch, html: {class: "form-horizontal row-border", id: "register-form"} do |f| %>
-
-<%= form_for @user, method: :patch do |f| %>
+<%= form_for @user, url: user_path(@user), method: :patch do |f| %>
 
 <% if @user.errors.any? %>
 <div class="error_messages">
@@ -32,63 +79,55 @@
 </div>
 <% end %>
 
-<div class="form-group">
-  <%= f.label :partner_one_birthday, class: "col-md-4 control-label"  %>
+<!-- <form role="form"> -->
+
+<div class="form-group float-label-control">
+  <%= f.label :partner_one_birthday, class: "col-md-4 control-label" %>
   <%= f.date_field :birthday_one %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :partner_two_birthday, class: "col-md-4 control-label" %>
   <%= f.date_field :birthday_two %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :relationship_status, class: "col-md-4 control-label" %>
   <%= f.text_field :relationship_status %>
 </div>
 
-<div class="form-group">
-  <%= f.label :we_are_a, class: "col-md-4 control-label"  %>
-  <%= f.text_field :we_are_a %>
-</div>
-
-<div class="form-group">
-  <%= f.label :we_are_looking_for, class: "col-md-4 control-label"  %>
-  <%= f.text_field :we_are_looking_for %>
-</div>
-
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :street_number, class: "col-md-4 control-label"  %>
   <%= f.text_field :street_number %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :street_name, class: "col-md-4 control-label"  %>
   <%= f.text_field :street %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :city, class: "col-md-4 control-label"  %>
   <%= f.text_field :city %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :state, class: "col-md-4 control-label"  %>
   <%= f.text_field :state %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :country, class: "col-md-4 control-label"  %>
   <%= f.text_field :country_location %>
 </div>
 
-<div class="form-group">
+<div class="form-group float-label-control">
   <%= f.label :zip_code, class: "col-md-4 control-label"  %>
   <%= f.text_field :zip_code %>
 </div>
 
-<div class="form-group">
-  <%= f.label :have_kids, class: "col-md-4 control-label"  %>
+<div class="form-group float-label-control">
+  <%= f.label :have_kids, class: "col-md-3 control-label"  %>
   <%= f.check_box :have_kids %>
 </div>
 
@@ -98,13 +137,11 @@
   <%= f.submit "Next", class: "btn btn-default btn-lg" %>
 </div>
 
+    </div>
 
-<fieldset>
 </div>
+
+    <% end %>
+      </div>
+  <!-- </form> -->
 </div>
-<% end %>
-</div>
-</div>
-</div>
-<% end %>
-</body>
