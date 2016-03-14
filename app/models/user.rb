@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
    self.all.each do |user|
      score = self.get_match_score(current_user, user)
      user_score = [user, score]
-     array_of_arrays << user_score
+     array_of_arrays << user_score unless user == current_user
    end
      unmapped_array = array_of_arrays.sort{|a, b| b[1] <=> a[1]}
      return unmapped_array.map{ |user| user[0] }
