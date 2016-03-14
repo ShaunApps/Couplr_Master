@@ -363,13 +363,15 @@ body {
 
 #browse-suggestions {
   margin-top: 0;
-  background-color: #4E332D;
+  background-color: #c09d7a;
+  color: white;
 }
 
 .styling-partner-one-age {
   font-size: 1.35em;
   margin-top: 10px;
   margin-bottom: 12px;
+  color: white;
 }
 
 .search-filter {
@@ -381,8 +383,21 @@ body {
 }
 
 .username-text {
-  font-size: 1.25em;
+  font-size: 1.3em;
   display: block;
-  margin-left: 25px;
+  margin-left: auto;
   margin-right: auto;
+}
+
+.index-form {
+  background-color: #C09D7A;
+}
+
+.browseforforms {
+  background-color: #C09D7A !important;
+}
+
+.listingpics {
+  margin-left: 0;
+  padding: 0;
 }

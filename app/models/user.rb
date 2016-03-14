@@ -4,6 +4,17 @@ class User < ActiveRecord::Base
   has_many :images
   scope :filtered_by_age_one, -> (min, max) {where ("(age_one >= #{min} AND age_one <= #{max})")}
   scope :filtered_by_age_two, -> (min, max) {where ("(age_two >= #{min} AND age_two <= #{max})")}
+  validates :partner_one_name, length: {minimum: 2, maximum: 20}, allow_blank: false
+  validates :partner_two_name, length: {minimum: 2, maximum: 20}, allow_blank: false
+  validates :username, length: {minimum: 2, maximum: 20}, allow_blank: false
+  validates :email, length: {minimum: 2, maximum: 50}, allow_blank: false
+  validates_uniqueness_of :username, :email
+
+  # validates :birthday_one, presence: true
+  # validates :birthday_two, presence: true
+  validates_presence_of :birthday_one, :on => [:update], allow_nil: false
+  validates_presence_of :birthday_two, :on => [:update], allow_nil: false
+
 
 
   acts_as_messageable

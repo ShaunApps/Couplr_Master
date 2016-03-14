@@ -24,7 +24,15 @@
       //  HideDialog();
     });
 
- });
+
+    $("#register-form").validate({
+                rules: {
+                    birthday_one: "required",
+                    birthday_two: "required",
+                  }
+                });
+
+});
 
  function ShowDialog(modal)
  {

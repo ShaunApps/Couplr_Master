@@ -6,10 +6,13 @@
    <div class="row">
       <div class="col-md-12 col-sm-6 col-xs-12">
          <div class="panel panel-default">
+           <div class="browseforforms">
             <div class="panel-heading clearfix">
+              <div class="browseforforms">
                <i class="icon-calendar"></i>
                <h1 id="browse-suggestions">Browse Suggestions</h1>
                <div class="search-bar">
+                 <div class="index-form">
                   <%= form_tag(action: "filter", method: "post") do %>
                   <%= label_tag(:min, "Partner one's age is between", :class => "styling-partner-one-age") %>
                   <%= select_tag(:min, options_for_select(18..99), :class => "age-selection") %>
@@ -22,18 +25,21 @@
                   <%= select_tag(:max_two, options_for_select(18..99, 99), :class => "age-selection") %> <br>
                   <%= submit_tag("Filter", :class => "search-filter") %>
                   <% end %>
+                </div>
                </div>
             </div>
+          </div>
+        </div>
 
             <div class="panel-body">
                <div class="row">
                   <% @users.each do |user| %>
                   <div class="col-md-4 portfolio-item">
                      <!-- class="img-responsive" -->
-                     <ul>
-                        <li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "280x220"), user_path(user)%></li>
-                        <li style="display:inline;"><%= link_to user.username, user_path(user), :class => "username-text" %></li>
-                        <li style="display:inline;"><%= "#{user.partner_one_name} & #{user.partner_two_name} "%></li>
+                     <ul class="listingpics">
+                      <center><li style="display:inline;"><%= link_to image_tag(user.avatar_url, size: "280x220"), user_path(user)%></li></center>
+                        <center><li style="display:inline;"><%= link_to user.username, user_path(user), :class => "username-text" %></li></center>
+                        <center><li class="username-text" style="display:inline;"><%= "#{user.partner_one_name} & #{user.partner_two_name}"%></li></center>
                      </ul>
                      <br>
                   </div>
