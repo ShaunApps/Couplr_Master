@@ -389,6 +389,7 @@ body {
   margin-right: auto;
 }
 
+
 .index-form {
   background-color: #C09D7A;
 }
@@ -400,4 +401,30 @@ body {
 .listingpics {
   margin-left: 0;
   padding: 0;
+}
+// this will change color of users show profile bar
+#showpanelcolor {
+  background-image: linear-gradient(to bottom, red 0%, red 100%);
+}
+
+#wholerowthing {
+  padding-top: 25px;
+}
+
+#usershowparamfont {
+  font-size: 1.25em;
+
+}
+
+#usershowtable {
+  width: 75%;
+}
+
+#aboutustable {
+  width:75%;
+}
+
+.profilepic {
+
+
 }

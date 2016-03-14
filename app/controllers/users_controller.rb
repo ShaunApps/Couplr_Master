@@ -154,8 +154,6 @@ class UsersController < ApplicationController
  #   current_user_array = []
  #   user_array = []
  #
- #
- #
  #   user.attributes.each do |key, value|
  #     # if value.respond_to? :boolean
  #      if value == nil
@@ -167,7 +165,7 @@ class UsersController < ApplicationController
  #
  #
  #
- #   current_user.attributes.each do |key, value|  #current_user is placeholder
+ #   @current_user.attributes.each do |key, value|  #current_user is placeholder
  #     if value == nil
  #       current_user_array << ""
  #     else
@@ -185,13 +183,8 @@ class UsersController < ApplicationController
  #   end
  #   return count
  #
- # 
+ #
  # end
- #
- #
- #
-
-
 
 
 

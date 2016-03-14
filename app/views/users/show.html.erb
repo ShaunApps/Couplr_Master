@@ -1,16 +1,17 @@
 
 <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
+      <div class="row" id="wholerowthing">
+        <dciv class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
 
           <div class="panel panel-info">
-            <div class="panel-heading">
+            <div class="panel-heading" id="showpanelcolor">
               <h4 class="panel-title"><%= @user.username %></h4>
+
             </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
-                  <%= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                  <%= image_tag(@user.avatar_url, size: "375x300", :class => "profilepic") if @user.avatar?%>
                 </div>
 
                 <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
@@ -25,38 +26,38 @@
                     <dd>Male</dd>
                   </dl>
                 </div>-->
-                <div class=" col-md-8 col-lg-8 ">
-                  <table class="table table-user-information">
+                <div class= "col-md-8 col-lg-8" align="right" >
+                  <table class="table table-user-information" id="usershowtable">
                     <tbody>
                       <tr>
-                        <td>Couple Name:</td>
+                        <td id="usershowparamfont">Couple Name:</td>
                         <td><%= @user.partner_one_name %> and <%=@user.partner_two_name %></td>
                       </tr>
                       <tr>
-                        <td><%= @user.partner_one_name %>'s Age:</td>
+                        <td id="usershowparamfont"><%= @user.partner_one_name %>'s Age:</td>
                         <td><%= @user.age_one %></td>
                       </tr>
                       <tr>
-                        <td><%=@user.partner_two_name %>'s Age:</td>
+                        <td id="usershowparamfont"><%=@user.partner_two_name %>'s Age:</td>
                         <td><%= @user.age_two %></td>
                       </tr>
 
                          <tr>
                              <tr>
-                        <td>City:</td>
+                        <td id="usershowparamfont">City:</td>
                         <td>Boca</td>
                       </tr>
                         <tr>
-                        <td>State:</td>
+                        <td id="usershowparamfont">State:</td>
                         <td>Florida</td>
                       </tr>
 
-                        <td>Relationship Status:</td>
+                        <td id="usershowparamfont">Relationship Status:</td>
                         <td><%= @user.relationship_status %>
                         </td>
 
                         <tr>
-                        <td>Have kids?</td>
+                        <td id="usershowparamfont">Have kids?</td>
                         <% if @user.have_kids %>
                         <td>Yes</td>
                         <% else %>
@@ -64,6 +65,8 @@
                         <% end %>
 
                       </tr>
+
+
 
                       </tr>
 
@@ -85,20 +88,24 @@
               </div>
 
 
-
               <div class="row">
-                <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
-                  <%#= image_tag(@user.avatar_url, size: "275x200") if @user.avatar?%>
+                <div class="col-md-2 col-lg-2" align="left"> <img alt=""class="img-circle img-responsive">
+                  <!-- <img src="https://www.dropbox.com/s/mt92d203lsuqtrr/married-couple-main1.jpg?dl=0" class="img-circle img-responsive"> -->
+
+                  <!-- this is second image on page -->
+                </div>
+                <div class="col-md-2 col-lg-2" align="right"> <img alt=""class="img-circle img-responsive">
+                  <%= image_tag(@user.avatar_url, size: "175x125") if @user.avatar?%>
                   <!-- this is second image on page -->
                 </div>
 
-                <div class="col-md-8 col-lg-8">
-                  <table class="table table-user-information" width="100">
+                <div class="col-md-8 col-lg-8" align="right">
+                  <table class="table table-user-information" id="aboutustable">
                     <tbody>
 
 
 
-                      <td>About Us:</td>
+                      <td id="usershowparamfont">About Us:</td>
                     <tr>
                       <td id="aboutussummary"><%= @user.about_us %></td>
                     </tr>
@@ -107,6 +114,9 @@
                   </table>
                 </div>
             </div>
+
+
+
                  <!-- <div class="panel-footer">
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
