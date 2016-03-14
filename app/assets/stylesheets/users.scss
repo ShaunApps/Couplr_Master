@@ -387,8 +387,9 @@ body {
   margin-right: auto;
 }
 
+// this will change color of users show profile bar 
 #showpanelcolor {
-  background-image: linear-gradient(to bottom, #C09D7A 100%);
+  background-image: linear-gradient(to bottom, red 0%, red 100%);
 }
 
 #wholerowthing {
