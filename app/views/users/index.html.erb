@@ -23,6 +23,8 @@
                   <%= select_tag(:min_two, options_for_select(18..99), :class => "age-selection") %>
                   <%= label_tag(:max_two, "and", :class => "styling-partner-one-age") %>
                   <%= select_tag(:max_two, options_for_select(18..99, 99), :class => "age-selection") %> <br>
+                  <%= label_tag(:distance_in_miles, "distance in miles", :class => "styling-partner-one-age") %>
+                  <%= select_tag(:distance_in_miles, options_for_select(1..30, 10), :class => "age-selection") %> <br>
                   <%= submit_tag("Filter", :class => "search-filter") %>
                   <% end %>
                 </div>
