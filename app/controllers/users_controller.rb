@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 
   def index
   #  @users = User.all
-   @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+  #  @users = User.order('created_at DESC').paginate(page: params[:page], per_page: 30)
   #  @users.filtered_by_age(min: 25, max: 52)
-  #  @users = User.get_match_array
+   @users = User.get_match_array(current_user)
   end
 
   def filter
