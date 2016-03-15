@@ -14,16 +14,16 @@
                <div class="search-bar">
                  <div class="index-form">
                   <%= form_tag(action: "filter", method: "post") do %>
-                  <%= label_tag(:min, "Partner one's age is between", :class => "styling-partner-one-age") %>
+                  <%= label_tag(:min, "Partner 1's age is between", :class => "styling-partner-one-age") %>
                   <%= select_tag(:min, options_for_select(18..99), :class => "age-selection") %>
                   <%= label_tag(:max, "and", :class => "styling-partner-one-age") %>
                   <%= select_tag(:max, options_for_select(18..99, 99), :class => "age-selection") %>
                   <br>
-                  <%= label_tag(:min_two, "Partner two's age is between", :class => "styling-partner-one-age") %>
+                  <%= label_tag(:min_two, "Partner 2's age is between", :class => "styling-partner-one-age") %>
                   <%= select_tag(:min_two, options_for_select(18..99), :class => "age-selection") %>
                   <%= label_tag(:max_two, "and", :class => "styling-partner-one-age") %>
                   <%= select_tag(:max_two, options_for_select(18..99, 99), :class => "age-selection") %> <br>
-                  <%= label_tag(:distance_in_miles, "distance in miles", :class => "styling-partner-one-age") %>
+                  <%= label_tag(:distance_in_miles, "Distance in miles", :class => "styling-partner-one-age") %>
                   <%= select_tag(:distance_in_miles, options_for_select(1..30, 10), :class => "age-selection") %> <br>
                   <%= submit_tag("Filter", :class => "search-filter") %>
                   <% end %>
