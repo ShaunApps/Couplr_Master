@@ -197,6 +197,9 @@ p.copyright {
     margin: 15px 0 0;
 }
 
+.panel-heading {
+    padding: 10px 62px !important;
+  }
 
 .web_dialog_overlay
 {
@@ -377,12 +380,27 @@ body {
 }
 
 .search-filter {
-  font-size: 1.4em;
+  font-size: 1.9em;
+  background-color: #00C4CC;
+  color: white;
+  border-radius: 10%;
+  border: 0;
+  height: 3em;
+  width: 7em;
+  color: white !important;
 }
+
 
 .age-selection {
   font-size: 1.3em;
+  -webkit-appearance: none;
+  width: 40px;
+  text-align: center;
+  padding-left: 9px;
+
 }
+
+
 
 .username-text {
   font-size: 1.3em;
