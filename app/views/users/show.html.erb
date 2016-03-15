@@ -14,10 +14,11 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-4 col-lg-4" align="left"> <img alt=""class="img-circle img-responsive">
+                <div class="col-md-4 col-md-offset-1" align="left"> <img alt=""class="img-circle img-responsive">
 
 
-                  <%= image_tag(@user.avatar_url, size: "375x300", :class => "profilepic") if @user.avatar?%>
+
+                  <%= image_tag(@user.avatar_url, size: "425x350", :class => "profilepic") if @user.avatar?%>
                </div>
                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                   <dl>
@@ -31,7 +32,7 @@
                     <dd>Male</dd>
                   </dl>
                   </div>-->
-               <div class= "col-md-8 col-lg-8" align="right" >
+               <div class= "col-md-6" align="right" >
 
                  <div class="container">
                     <!-- Trigger the modal with a button -->
@@ -90,7 +91,7 @@
                         <tr>
                         <tr>
                            <td id="usershowparamfont">City:</td>
-                           <td>Boca</td>
+                           <td>Fort Lauderdale</td>
                         </tr>
                         <tr>
                            <td id="usershowparamfont">State:</td>
@@ -116,17 +117,16 @@
             <div class="row">
             </div>
             <div class="row">
-               <div class="col-md-2 col-lg-2" align="left">
+               <div class="col-md-2 col-md-offset-1">
                   <img alt=""class="img-circle img-responsive">
-                  <!-- <img src="https://www.dropbox.com/s/mt92d203lsuqtrr/married-couple-main1.jpg?dl=0" class="img-circle img-responsive"> -->
+                <%= image_tag("robbyandtati2.jpg", size: "175x125", :class => "profilepic")%>
+               </div>
+               <div class="col-md-1" align="right">
+                  <img alt=""class="img-circle img-responsive">
+                  <%= image_tag("robbyandtatitiger.jpg", size: "175x125")%>
                   <!-- this is second image on page -->
                </div>
-               <div class="col-md-2 col-lg-2" align="right">
-                  <img alt=""class="img-circle img-responsive">
-                  <%= image_tag(@user.avatar_url, size: "175x125") if @user.avatar?%>
-                  <!-- this is second image on page -->
-               </div>
-               <div class="col-md-8 col-lg-8" align="right">
+               <div class="col-md-6 col-md-offset-1" align="right">
                   <table class="table table-user-information" id="aboutustable">
                      <tbody>
                         <td id="usershowparamfont">About Us:</td>
