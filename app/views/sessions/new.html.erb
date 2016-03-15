@@ -1,4 +1,3 @@
-<center>
 <!-- <div class="intro-message">
 <div class="login-button">
   <header id="signup_header">
@@ -26,33 +25,22 @@
 
   <!-- <div id="login-grp" class="col-md-2 col-md-offset-4"> -->
   <h1>Login</h1>
-
   <div class="container">
-    <div class="col-md-6 col-md-offset-3" id="form-container">
-      <form role="form">
-         <div class="bs-example2">
-
-<%= form_tag sessions_path do %>
-  <div class="form-group float-label-control">
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+     <div class="col-md-6 col-md-offset-3" id="form-container">
+        <div class="bs-example2">
+           <%= form_tag sessions_path do %>
+           <div class="form-group float-label-control">
+              <%= label_tag :username %>
+              <%= text_field_tag :username %>
+           </div>
+           <div class="form-group float-label-control">
+              <%= label_tag :password %>
+              <%= password_field_tag :password %>
+           </div>
+           <div id="login-btn">
+              <%= submit_tag "Let's Go", class: "btn btn-default btn-lg" %>
+           </div>
+             <% end %>
+        </div>
+     </div>
   </div>
-<div class="form-group float-label-control">
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-</div>
-
-<div id="login-btn">
-  <%= submit_tag "Let's Go", class: "btn btn-default btn-lg" %>
-
-
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<% end %>
-</div>

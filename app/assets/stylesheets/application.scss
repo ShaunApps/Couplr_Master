@@ -16,7 +16,9 @@ input {
     color: #000 !important;
 }
 
-
+.content {
+  height: 95%;
+}
 
 
 .btn-success {
@@ -361,5 +363,27 @@ input {
       color: #000;
       background-color: #eaeaea !important;
       border-color: #eaeaea !important;
-      padding: 33px;
+      margin: 10 10;
+      padding-bottom: 45px;
+      padding-top: 30px;
+      margin-bottom: 0;
+      margin-top: 0;
+      font-size: large;
+      width: 50%;
+      z-index: 999;
+      position: absolute;
+      margin-left: 25%;
+  }
+
+  .alert-danger {
+    margin: 10 10;
+    padding-bottom: 45px;
+    padding-top: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: large;
+    width: 50%;
+    z-index: 999;
+    position: absolute;
+    margin-left: 25%;
   }
