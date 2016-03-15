@@ -327,7 +327,13 @@ body {
     background-color: #fff;
     margin-left: 35px;
 }
-
+input.btn.btn-default.btn-lg.login-bg {
+    margin-left: 37%;
+    margin-bottom: 50%;
+}
+input.btn.btn-default.btn-lg.interests {
+    margin-bottom: 13%;
+}
 .btn-default.btn-block {
   font-family: 'Quicksand',sans-serif !important;
     font-size: 14px;
@@ -659,7 +665,7 @@ div#form-container {
 }
 .bs-example {
     padding-top: 40px;
-    margin-right: -13%;
+    margin-right: -15%;
 }
 .bs-example1 {
     padding-top: 73px;
@@ -691,6 +697,7 @@ input#create-acct-btn {
     display: flex;
     align-items: center;
 }
+
 label.col-md-4.control-label {
     padding-top: 0px;
 }
@@ -762,4 +769,7 @@ label.col-md-4.control-label {
       float: left;
     }
   }
+}
+button#messagebuttonshow {
+    margin-left: 13%;
 }
