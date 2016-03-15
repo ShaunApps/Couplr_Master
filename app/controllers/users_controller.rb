@@ -97,19 +97,19 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         if params[:redirect_location] == 'two_upload_photo'
-          format.html { redirect_to two_upload_photo_path(@user), notice: 'User was successfully updated.' }
+          format.html { redirect_to two_upload_photo_path(@user)}
           format.json { render :two_upload_photo, status: :ok, location: @user }
         elsif params[:redirect_location] == 'three_interests'
-          format.html { redirect_to three_interests_path(@user), notice: 'User was successfully updated.' }
+          format.html { redirect_to three_interests_path(@user)}
           format.json { render :three_interests, status: :ok, location: @user }
         elsif params[:redirect_location] == 'four_moreinterests'
-          format.html { redirect_to four_moreinterests_path(@user), notice: 'User was successfully updated.' }
+          format.html { redirect_to four_moreinterests_path(@user)}
           format.json { render :four_moreinterests, status: :ok, location: @user }
         elsif params[:redirect_location] == 'five_aboutus'
-          format.html { redirect_to five_aboutus_path(@user), notice: 'User was successfully updated.' }
+          format.html { redirect_to five_aboutus_path(@user)}
           format.json { render :five_aboutus, status: :ok, location: @user }
         else params[:redirect_location] == 'six_login'
-          format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+          format.html { redirect_to users_path}
           format.json { render :users, status: :ok, location: @user }
         end
       else
