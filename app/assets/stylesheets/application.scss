@@ -16,7 +16,10 @@ input {
     color: #000 !important;
 }
 
-
+.content-wrapper {
+  height: 100%;
+  min-height: 83vh;
+}
 
 
 .btn-success {
