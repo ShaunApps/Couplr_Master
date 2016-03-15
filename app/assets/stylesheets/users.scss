@@ -327,6 +327,7 @@ body {
     background-color: #fff;
     margin-left: 35px;
 }
+
 .btn-default.btn-block {
   font-family: 'Quicksand',sans-serif !important;
     font-size: 14px;
@@ -646,8 +647,10 @@ input#user_have_kids {
     margin-left: 30px;
 }
 label.col-md-3.control-label {
-    margin: 8px;
-    margin-left: 60px;
+  margin: 8px;
+  margin-left: 60px;
+  font-size: 20px;
+  padding-top: 4px;
 }
 div#form-container {
     text-align: left;
@@ -656,7 +659,7 @@ div#form-container {
 }
 .bs-example {
     padding-top: 40px;
-    margin-right: -5%;
+    margin-right: -13%;
 }
 .bs-example1 {
     padding-top: 73px;
@@ -678,4 +681,85 @@ input#create-acct-btn {
     background-color: #00C4CC !important;
     border-color: #00C4CC !important;
     margin-left: 20%;
+}
+.copyright.text-muted {
+    color: #C7C4C4;
+    text-align: left;
+}
+.footer2, .footer3 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+label.col-md-4.control-label {
+    padding-top: 0px;
+}
+.accordion-tabs-minimal {
+  $base-border-color: #dcdcdc !default;
+  $base-background-color: #fff !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477dca !default;
+  $dark-gray: #333 !default;
+  $medium-screen: em(640) !default;
+  $tab-link-color: $dark-gray;
+  $tab-border: 1px solid $base-border-color;
+  $tab-active-background: $base-background-color;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: #c0c0c0;
+  $tab-mode: $medium-screen;
+
+  @include clearfix;
+  line-height: 1.5;
+  padding: 0;
+
+  .tab-header-and-content {
+    list-style: none;
+
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  .tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $tab-link-color;
+    display: block;
+    padding: ($base-spacing / 2) $gutter;
+    text-decoration: none;
+
+    @include media($tab-mode) {
+      border-top: 0;
+      display: inline-block;
+    }
+
+    &:hover {
+      color: $action-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: $base-spacing $gutter;
+    width: 100%;
+
+    @include media($tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
+  }
 }

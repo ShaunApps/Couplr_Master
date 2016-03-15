@@ -5,8 +5,10 @@
 @import 'sessions';
 @import 'bootstrap';
 @import 'bootstrap/theme';
+@import 'chosen';
 @import 'owl.carousel';
 @import 'owl.theme';
+
 
 * {
   box-sizing: border-box;
@@ -16,8 +18,11 @@ input {
     color: #000 !important;
 }
 
-.content {
-  height: 95%;
+
+.content-wrapper {
+  height: 100%;
+  min-height: 83vh;
+
 }
 
 

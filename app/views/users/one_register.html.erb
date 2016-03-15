@@ -1,47 +1,4 @@
 
-        <header class="navigation navbar-fixed-top" role="banner">
-          <div class="navigation-wrapper">
-            <a href="javascript:void(0)" class="logo">
-              <img src="http://i.imgur.com/UUnjhVY.png" alt="Logo Image">
-            </a>
-            <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
-            <nav role="navigation">
-              <ul id="js-navigation-menu" class="navigation-menu show">
-                <% if user_signed_in? %>
-
-
-                <li class="nav-link"><%= link_to "Hi there, #{current_user.username}", user_path(current_user) %></li>
-                <li class="nav-link"><%= link_to "Inbox", mailbox_inbox_path %></li>
-                <li class="nav-link"><%= link_to "Logout", logout_path %></li>
-
-                <li class="nav-link more"><a href="javascript:void(0)">Edit Profile</a>
-                <ul class="submenu">
-                <li><%= link_to "Browse Suggestions", logout_path %></li>
-                <li><%= link_to "Upload Photo", logout_path %></li>
-                <li class="Interests"><%= link_to "Edit Profile", logout_path %>
-                <ul class="submenu">
-                <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
-                <li><a href="javascript:void(0)">Another Item</a></li>
-                </ul>
-                </li>
-                <li class="more"><%= link_to "Interests", logout_path %>
-                <ul class="submenu">
-                <li><%= link_to "About Us", logout_path %></li>
-                <li><%= link_to "Details", logout_path %></li>
-                </ul>
-                </li>
-                </ul>
-                </li>
-                </ul>
-                <% else %>
-                  <li class="nav-link"><%= link_to "Login", login_path %></li>
-
-</nav>
-<% end %>
-</div>
-</div>
-</header>
-
 
 
 
@@ -134,7 +91,7 @@
 <div>
   <div class="col-md-7 control-label">
   <%= hidden_field_tag :redirect_location, 'two_upload_photo' %>
-  <%= f.submit "Next", class: "btn btn-default btn-lg" %>
+  <%= f.submit "Next", class: "btn btn-default btn-lg reg" %>
 </div>
 
     </div>
