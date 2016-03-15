@@ -17,8 +17,8 @@
                 <li class="nav-link more"><a href="javascript:void(0)">Edit Profile</a>
                 <ul class="submenu">
                 <li><%= link_to "Matches", users_path %></li>
-                <li><%= link_to "Upload Photo", logout_path %></li>
-                <li class="Interests"><%= link_to "Edit Profile", logout_path %>
+                <li><%= link_to "Upload Photo", two_upload_photo_path(current_user) %></li>
+                <li class="Interests"><%= link_to "Edit Profile", three_interests_path(current_user)%>
                 <ul class="submenu">
                 <li><a href="javascript:void(0)">Sub-submenu Item</a></li>
                 <li><a href="javascript:void(0)">Another Item</a></li>
