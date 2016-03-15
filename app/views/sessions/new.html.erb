@@ -1,59 +1,21 @@
-<center>
-<!-- <div class="intro-message">
-<div class="login-button">
-  <header id="signup_header">
-  <div class="header login">
-<span style="margin-right: 20px">Need an account?</span>
-<a href="signup" class="btn btn-default btn-lg">
-  Sign Up</a>
 
-</div>
-</div> -->
-
-
-
-    <!-- <div class="row"> -->
-      <!-- <div id="login-btn" class="col-md-2 col-md-offset-10"> -->
-        <!--<%= link_to signup_path do %>
-        <div class="btn btn-default btn-lg">
-          Sign Up
+  <h1>Login</h1>
+  <div class="container">
+     <div class="col-md-6 col-md-offset-3" id="form-container">
+        <div class="bs-example2">
+           <%= form_tag sessions_path do %>
+           <div class="form-group float-label-control">
+              <%= label_tag :username %>
+              <%= text_field_tag :username %>
+           </div>
+           <div class="form-group float-label-control">
+              <%= label_tag :password %>
+              <%= password_field_tag :password %>
+           </div>
+           <div id="login-btn">
+              <%= submit_tag "Let's Go", class: "btn btn-default btn-lg" %>
+           </div>
+             <% end %>
         </div>
-        <% end %> -->
-      <!-- </div> -->
-
-
-
-
-  <!-- <div id="login-grp" class="col-md-2 col-md-offset-4"> -->
-
-
-  <div class="container content-wrapper">
-      <h1>Login</h1>
-    <div class="col-md-6 col-md-offset-3" id="form-container">
-      <form role="form">
-         <div class="bs-example2">
-
-<%= form_tag sessions_path do %>
-  <div class="form-group float-label-control">
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+     </div>
   </div>
-<div class="form-group float-label-control">
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-</div>
-
-<div id="login-btn">
-  <%= submit_tag "Let's Go", class: "btn btn-default btn-lg" %>
-
-
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<% end %>
-</div>

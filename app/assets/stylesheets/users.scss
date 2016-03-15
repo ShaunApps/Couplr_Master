@@ -57,6 +57,23 @@ h6 {
   background-color: #fdf0e3;
 }
 
+#messagebuttonshow {
+
+
+}
+
+#buttonpullright {
+  margin-left: 425px;
+
+}
+
+#showpanelleft {
+}
+
+
+#showpanelright {
+
+}
 
 intro-message {
     position: relative;
@@ -188,12 +205,18 @@ footer {
     padding: 50px 0;
     background-color: #3F4652;
     color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 p.copyright {
     margin: 15px 0 0;
 }
 
+.panel-heading {
+    padding: 10px 62px !important;
+  }
 
 .web_dialog_overlay
 {
@@ -364,26 +387,42 @@ body {
 #browse-suggestions {
   margin-top: 0;
   background-color: #eaeaea;
-  color: white;
+  color: #3F4652;
+  font-size: 45px;
 }
 
 .styling-partner-one-age {
-  font-size: 1.35em;
+  font-size: 1.60em;
   margin-top: 10px;
   margin-bottom: 12px;
-  color: white;
+  color: #3F4652;
 }
 
 .search-filter {
-  font-size: 1.4em;
+  font-size: 1.9em;
+  background-color: #00C4CC;
+  color: white;
+  border-radius: 10%;
+  border: 0;
+  height: 2.3em;
+  width: 6.5em;
+  color: white !important;
 }
+
 
 .age-selection {
   font-size: 1.3em;
+  -webkit-appearance: none;
+  width: 40px;
+  text-align: center;
+  padding-left: 9px;
+
 }
 
+
+
 .username-text {
-  font-size: 1.3em;
+  font-size: 1.5em;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -407,6 +446,11 @@ body {
 #showpanelcolor {
   background-image: linear-gradient(to bottom, #eaeaea, #eaeaea);
   padding: 30px;
+}
+
+#showpanelusername {
+  text-align: center;
+  font-size: 2.5em;
 }
 
 #wholerowthing {
