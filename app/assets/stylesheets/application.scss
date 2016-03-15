@@ -27,9 +27,16 @@ input {
 
 
 .btn-success {
-    color: #000 !important;
-    background-color: #ccc !important;
-    border-color: #ccc !important;
+    color: #fff !important;
+    background-color: #00C4CC !important;
+    border-color: #00C4CC !important;
+  }
+
+.btn-success.compose {
+    color: #fff !important;
+    background-color: #00C4CC !important;
+    border-color: #00C4CC !important;
+    margin-left: 15px;
   }
   header.navigation {
     $base-border-color: gainsboro !default;
