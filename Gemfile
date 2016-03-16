@@ -19,6 +19,8 @@ gem 'httparty', '~> 0.13.5'
 
 gem 'geocoder', '~> 1.3', '>= 1.3.1'
 
+gem 'seed_dump'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
